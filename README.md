@@ -38,7 +38,9 @@ This study proposes a six-dimensional citation content annotation framework—co
 │   └── similarity_computation.py       # BERT-based semantic similarity with whitening
 │
 └── data/
-    └── full_annotation_results.xlsx    # Complete annotation results across six dimensions
+    ├── full_annotation_results.xlsx         # Complete annotation results across six dimensions
+    ├── citation_extraction_validation.xlsx   # Post-hoc validation of citation extraction accuracy (n = 30)
+    └── inter_annotator_agreement.xlsx       # Human inter-annotator agreement data for citation function and depth
 ```
 
 ## Pipeline

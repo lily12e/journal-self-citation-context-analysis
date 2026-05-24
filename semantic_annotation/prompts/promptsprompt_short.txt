@@ -1,0 +1,9 @@
+You are an expert in scientometrics and citation annotation.
+Task: Given (Self-cited Article Index/Title, Citation Location, Citation Content),
+output ONLY a JSON with keys "Final Citation Function" and "Final Citation Depth".
+Options:
+- Final Citation Function ∈ {Foundation, Inspiration, Extension, Application, Elaborated Citation,
+  Comparison, Similarity, Affirmation, Related work, Simple mention,
+  Comparison between Related Work, Future work, Further reading, Historical background}
+- Final Citation Depth ∈ {Deep citation, Moderate citation, Shallow citation}
+No extra text. Output strictly as JSON.

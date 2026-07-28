@@ -4,6 +4,32 @@ This directory contains the scripts used to extract and check citation records.
 Re-running extraction from source articles requires legally obtained `.docx`
 files supplied by the user; the source full text is not redistributed.
 
+## Structural annotation
+
+`structural_annotation.py` extracts target journal self-citations from a
+directory of user-supplied `.docx` articles and exports citation position,
+distance, strength, sentence, and context fields. Paths and study-specific
+target settings are supplied explicitly at run time; the script does not
+depend on a local `input` directory or a timestamped output name.
+
+Check the paths and parameters without processing:
+
+```text
+python citation_extraction_and_structural_annotation/structural_annotation.py \
+  --input-dir path/to/source_articles \
+  --output outputs/structural_annotations.xlsx \
+  --target-year 2022 \
+  --target-journal "Int J Syst Assur Eng Manag" \
+  --target-journal "International Journal of System Assurance Engineering and Management" \
+  --validate-only
+```
+
+Remove `--validate-only` to run the extraction. Repeat `--target-journal` for
+abbreviated and full-name variants of the same target journal. Run the command
+separately for other target journal/year combinations. Existing output is not
+replaced unless `--overwrite` is supplied. The source `.docx` articles are
+non-public inputs and must be obtained legally by the reproducing researcher.
+
 ## Error checking
 
 `error_checking.py` cleans citation-context whitespace, writes a cleaned-text

@@ -2,92 +2,142 @@
 
 Code and data for the paper:
 
-**"Contextual Patterns of Journal Self-Citation in JCR-Suppressed and Comparator Journals: A Multi-Dimensional Citation Content Analysis"**
+**"Contextual Patterns of Journal Self-Citation in JCR-Suppressed and
+Comparator Journals: A Multi-Dimensional Citation Content Analysis"**
 
 ## Overview
 
-This study proposes a six-dimensional citation content annotation framework—covering citation position, distance, strength, function, depth, and semantic similarity—and applies it to compare self-citation patterns between JCR-suppressed journals and comparator journals across five disciplinary categories.
+This study applies a six-dimensional citation-content framework—citation
+position, distance, strength, function, depth, and semantic similarity—to
+compare JCR-suppressed and comparator journals across five disciplinary
+categories.
 
 ## Repository structure
 
-```
+```text
 ├── citation_extraction_and_structural_annotation/
-│   ├── structural_annotation.py    # Citation extraction, position, distance, and strength annotation
-│   └── error_checking.py           # Automated detection of extraction anomalies
-│
+│   ├── structural_annotation.py
+│   └── error_checking.py
 ├── semantic_annotation/
-│   ├── build_training_data.py      # Convert annotated data to JSONL for GPT-4o fine-tuning
-│   ├── train_finetune.py           # Fine-tuning pipeline for citation function and depth classification
-│   ├── annotation_guidelines.md    # Annotation criteria for citation function and depth
+│   ├── annotation_guidelines.docx
+│   ├── build_training_data.py
+│   ├── train_finetune.py
 │   ├── prompts/
-│   │   ├── prompt_long.txt         # Full prompt with category definitions and examples
-│   │   └── prompt_short            # Abbreviated prompt for inference
+│   │   ├── promptsprompt_long.txt
+│   │   └── promptsprompt_short.txt
 │   └── training_data/
-│       ├── batch1_train_130.jsonl   # Stage 1 training set (130 instances)
-│       ├── batch1_val_32.jsonl      # Stage 1 validation set (32 instances)
-│       ├── batch2_train_55.jsonl    # Stage 2 training set (55 instances)
-│       ├── batch2_val_20.jsonl      # Stage 2 validation set (20 instances)
-│       ├── batch3_train_53.jsonl    # Stage 3 training set (53 instances)
-│       ├── fine_tuned_model_v1.txt  # Model ID after stage 1
-│       ├── fine_tuned_model_v2.txt  # Model ID after stage 2
-│       ├── fine_tuned_model_v3.txt  # Model ID after stage 3 (final)
-│       └── test_set_84.xlsx         # Independent test set (84 instances)
-│
+│       ├── batch1_train_130.jsonl
+│       ├── batch1_val_32.jsonl
+│       ├── batch2_train_55.jsonl
+│       ├── batch2_val_20.jsonl
+│       ├── batch3_train_53.jsonl
+│       ├── test_set_84.jsonl
+│       └── fine_tuned_model_v1/v2/v3.txt
 ├── semantic_similarity/
-│   ├── citation_content_filtering.py   # GPT-4o-based citation context filtering
-│   └── similarity_computation.py       # BERT-based semantic similarity with whitening
-│
-└── data/
-    ├── full_annotation_results.xlsx         # Complete annotation results across six dimensions
-    ├── citation_extraction_validation.xlsx   # Post-hoc validation of citation extraction accuracy (n = 30)
-    └── inter_annotator_agreement.xlsx       # Human inter-annotator agreement data for citation function and depth
+│   ├── citation_content_filtering.py
+│   ├── similarity_computation.py
+│   ├── all_utils.py
+│   ├── requirements.txt
+│   └── resources/
+│       └── bert-base-uncased-first_last_avg-whiten(NLI).pkl
+├── data/
+│   ├── full_annotation_results.xlsx
+│   ├── citation_extraction_validation.xlsx
+│   └── inter_annotator_agreement.xlsx
+├── requirements.txt
+└── README.md
 ```
+
+## Environment
+
+Python 3.11 is recommended. The scripts use Python 3.10+ syntax.
+
+Create an isolated environment and install the complete dependency list:
+
+```text
+python -m venv .venv
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+PyTorch installation can be platform-specific. The requirement file installs
+the standard build; users who need a particular CUDA build should follow the
+PyTorch installation instructions for their operating system and hardware.
+
+## Models and access requirements
+
+### BERT-whitening semantic similarity
+
+`semantic_similarity/similarity_computation.py` uses
+`bert-base-uncased`. The model can be downloaded by `transformers` or supplied
+as a local model directory. Internet access is needed only when the model is
+not already available locally. The whitening parameter file is included under
+`semantic_similarity/resources/`.
+
+### OpenAI API-dependent steps
+
+The following scripts require the user's own `OPENAI_API_KEY`, an OpenAI API
+account with access to the specified model, and available API billing:
+
+```text
+semantic_similarity/citation_content_filtering.py
+semantic_annotation/train_finetune.py
+```
+
+Set the key as an environment variable. Never place an API key in a script,
+README, committed `.env` file, or released output.
+
+```text
+OPENAI_API_KEY=your_own_key
+```
+
+Fine-tuned model identifiers are account- or project-specific and may not be
+accessible to other users. The `fine_tuned_model_v1/v2/v3.txt` files document
+the model identifiers used in the study; they do not grant access to those
+models. Re-running a fine-tuning job requires the user's own API credentials,
+model access, and billing.
+
+The released annotation workbook can be used for downstream analyses without
+calling the OpenAI API or accessing the fine-tuned models.
+
+## Randomness and deterministic settings
+
+| Step | Randomness setting |
+|---|---|
+| Structural extraction and error checking | No random sampling in the released scripts |
+| Excel-to-JSONL conversion | `--seed 42` by default; the seed controls prompt selection and train/validation shuffling |
+| GPT-based citation-content filtering | No client-side seed is fixed; API outputs may vary across reruns |
+| Managed fine-tuning | No client-side training seed is specified by the released script |
+| BERT-whitening similarity | Model is run in evaluation mode; use the same model files, whitening parameters, package versions, and device for closest numerical reproduction |
+
+The released JSONL files and final annotation workbook preserve the exact data
+used for the reported analyses even when an upstream API-dependent step is not
+rerun.
+
+## Non-public and user-supplied inputs
+
+The source full-text journal articles are not redistributed in this repository.
+Re-running citation extraction from raw documents requires legally obtained
+`.docx` article files supplied by the user. The released validation and final
+annotation workbooks allow inspection of the extracted and annotated data
+without those source documents.
 
 ## Pipeline
 
-1. **Citation extraction and structural annotation** — Extract in-text citations from .docx files, match them to reference lists, and annotate citation position, distance, and strength.
+1. `structural_annotation.py` extracts in-text citations and annotates
+   citation position, distance, and strength.
+2. `build_training_data.py` converts manually annotated Excel rows to JSONL.
+3. `train_finetune.py` submits an optional API-based fine-tuning job for
+   citation function and depth.
+4. `citation_content_filtering.py` performs optional API-based filtering of
+   citation contexts.
+5. `similarity_computation.py` computes BERT-whitening semantic similarity.
 
-2. **Semantic annotation** — Classify citation function (14 categories) and citation depth (3 levels) using a fine-tuned GPT-4o model.
-
-3. **Semantic similarity** — Filter citation contexts for relevance, then compute cosine similarity between citation content embeddings and cited article abstract embeddings using BERT with whitening transformation.
-
-## Requirements
-
-- Python 3.8+
-- python-docx
-- pandas
-- openpyxl
-- openai
-- transformers
-- torch
-
-Install dependencies:
-
-```bash
-pip install python-docx pandas openpyxl openai transformers torch
-```
-
-## Usage
-
-Each script is configured with input/output paths at the top of the file. Modify these paths to point to your data before running:
-
-```bash
-# Step 1: Extract citations and annotate structural features
-python citation_extraction_and_structural_annotation/structural_annotation.py
-
-# Step 2: Fine-tune GPT-4o for function and depth classification
-python semantic_annotation/train_finetune.py
-
-# Step 3: Filter citation content
-python semantic_similarity/citation_content_filtering.py
-
-# Step 4: Compute semantic similarity
-python semantic_similarity/similarity_computation.py
-```
+Subdirectory READMEs provide commands and file-specific notes.
 
 ## Citation
 
-(To be added upon acceptance)
+To be added upon acceptance.
 
 ## License
 

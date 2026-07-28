@@ -22,32 +22,25 @@
 8) 为安全起见，保留旧版 docx2txt 流水线函数作为 Legacy（未调用），方便回退与比对。
 """
 
+import argparse
 import os
 import re
-import datetime
+from pathlib import Path
 import pandas as pd
 from typing import Dict, List, Tuple
 from collections import defaultdict
 
 # 仅少量函数中使用（Legacy 备用）；主流程已改用 python-docx 段落处理
-import docx2txt
-from docx import Document
+# 延迟报告缺失依赖，使 --help 和 --validate-only 在安装前也可使用。
+try:
+    import docx2txt
+except ModuleNotFoundError:
+    docx2txt = None
 
-# =========================
-# 路径配置
-# =========================
-INPUT_FOLDER = "./input"
-ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-OUTPUT_FILE = os.path.join("./output", f"citation_annotation_with_distance_{ts}.xlsx")
-
-# ===== 目标条件 =====
-TARGET_YEAR = 2022 # 目标年份（按需更改）
-# 支持多个期刊名，按需添加变体/缩写/全称
-TARGET_JOURNAL_NAMES = ["Int J Syst Assur Eng Manag", "International Journal of System Assurance Engineering and Management"]  # 可继续追加
-
-# ===== 摘要提取模式 =====
-# 可选: "auto" | "inline_header" | "after_header"
-ABSTRACT_MODE = "auto"
+try:
+    from docx import Document
+except ModuleNotFoundError:
+    Document = None
 
 # ============ 标题判定参数（可自选） ============
 HEADING_FONT_NAME = "Times New Roman"     # 如需改为 "Century" / "Calibri" 等，直接改这里
@@ -207,10 +200,11 @@ def build_multi_fuzzy_journal_regex(names: List[str], gap: int = 60) -> re.Patte
     combined = "|".join(pats)
     return re.compile(combined, re.IGNORECASE)
 
-# 用多名聚合替换原来的 TARGET_JOURNAL_REGEX
-TARGET_JOURNAL_REGEX = build_multi_fuzzy_journal_regex(TARGET_JOURNAL_NAMES)
-
-def filter_references_by_journal_and_year_v3(ref_list: List[str], year: int) -> List[str]:
+def filter_references_by_journal_and_year_v3(
+    ref_list: List[str],
+    year: int,
+    journal_regex: re.Pattern,
+) -> List[str]:
     """
     返回满足目标期刊名 + 年份的参考文献条目列表。
     ——年份除了严格形式 (2023a) 外，增加宽松兜底 \b2023[a]?\b。
@@ -219,7 +213,7 @@ def filter_references_by_journal_and_year_v3(ref_list: List[str], year: int) -> 
     ys_loose  = YEAR_TOKEN_LOOSE(year)
     out = []
     for ref_text in ref_list:
-        if TARGET_JOURNAL_REGEX.search(ref_text) and (ys_strict.search(ref_text) or ys_loose.search(ref_text)):
+        if journal_regex.search(ref_text) and (ys_strict.search(ref_text) or ys_loose.search(ref_text)):
             out.append(ref_text)
     return out
 
@@ -503,7 +497,6 @@ def extract_citation_sentences_apa_docx(docx_path: str,
 
             # —— et al. 多年份（目标年份在第二位）—— Author et al. (2021, 2022)
             r'{author}\s+et al\.?\s*\(\s*' + YEAR + r'\s*,\s*{year}(?:[a-z])?\s*(?:,\s*' + YEAR + r'\s*)*\)',
-
             # —— 括号内多年份（无 et al.）—— (Author, 2020, 2022, 2023)
             r'\({author}\s*,\s*(?:' + YEAR + r'\s*,\s*)*{year}(?:[a-z])?\s*(?:,\s*' + YEAR + r'\s*)*\)',
 
@@ -1154,17 +1147,25 @@ def annotate_distance_for_doc(rows: List[Dict], docx_path: str) -> List[Dict]:
 # =========================
 # 主流程
 # =========================
-def main():
+def run_pipeline(
+    input_folder: Path,
+    output_file: Path,
+    target_year: int,
+    target_journal_names: List[str],
+    abstract_mode: str = "auto",
+) -> int:
     all_rows: List[Dict] = []
+    target_journal_regex = build_multi_fuzzy_journal_regex(target_journal_names)
 
-    files = sorted_docx_files(INPUT_FOLDER)
+    files = sorted_docx_files(str(input_folder))
     if not files:
-        print("未发现待处理的 .docx 文件")
-        return
+        raise FileNotFoundError(
+            f"No .docx files were found in the input directory: {input_folder}"
+        )
 
     for filename in files:
         file_id, _ = os.path.splitext(filename)
-        orig_path = os.path.join(INPUT_FOLDER, filename)
+        orig_path = str(input_folder / filename)
 
         print(f"处理: {filename}")
 
@@ -1175,7 +1176,7 @@ def main():
         if not ref_list:
             log_anomaly(filename, "未找到References或参考文献区块为空")
             # 仍输出占位行，保留摘要，其他置空
-            abstract = extract_abstract(orig_path, mode=ABSTRACT_MODE) if os.path.exists(orig_path) else ""
+            abstract = extract_abstract(orig_path, mode=abstract_mode) if os.path.exists(orig_path) else ""
             all_rows.append({
                 "Self-citing Article Index": file_id,
                 "Self-citing Article Abstract": abstract,
@@ -1197,10 +1198,14 @@ def main():
             log_anomaly(filename, f"参考文献条数过少: {len(ref_list)}")
 
         # 2) 筛选目标期刊 + 年份
-        target_refs = filter_references_by_journal_and_year_v3(ref_list, TARGET_YEAR)
+        target_refs = filter_references_by_journal_and_year_v3(
+            ref_list,
+            target_year,
+            target_journal_regex,
+        )
         if not target_refs:
             log_anomaly(filename, "无目标期刊+年份条目")
-            abstract = extract_abstract(orig_path, mode=ABSTRACT_MODE) if os.path.exists(orig_path) else ""
+            abstract = extract_abstract(orig_path, mode=abstract_mode) if os.path.exists(orig_path) else ""
             all_rows.append({
                 "Self-citing Article Index": file_id,
                 "Self-citing Article Abstract": abstract,
@@ -1219,7 +1224,7 @@ def main():
             continue
 
         # 3) 构建作者+年份目标并在正文匹配引文句（**docx 段落级**）
-        targets = build_targets_from_reflist(target_refs, TARGET_YEAR)
+        targets = build_targets_from_reflist(target_refs, target_year)
         citations = extract_citation_sentences_apa_docx(orig_path, targets)
         # —— 同一篇文档内：用参考文献在“目标列表”里的先后，作为组序
         ref_order_map = {ref_text: i for i, ref_text in enumerate(target_refs)}
@@ -1244,7 +1249,7 @@ def main():
         sent_index = build_sentence_index(body_paras)
 
         # 7) 准备逐行输出 —— 始终保证“每个目标参考文献至少一行”
-        abstract = extract_abstract(orig_path, mode=ABSTRACT_MODE) if os.path.exists(orig_path) else ""
+        abstract = extract_abstract(orig_path, mode=abstract_mode) if os.path.exists(orig_path) else ""
         rows_for_doc: List[Dict] = []
         matched_refs = set()
 
@@ -1338,14 +1343,131 @@ def main():
         # 不输出这两列
         df = df.drop(columns=["Self-cited Article Index", "ref_order"], errors="ignore")
 
-        os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-        df.to_excel(OUTPUT_FILE, index=False)
-        print(f"处理完成，共 {len(df)} 条记录。输出: {OUTPUT_FILE}")
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+        df.to_excel(output_file, index=False)
+        print(f"处理完成，共 {len(df)} 条记录。输出: {output_file}")
+        return len(df)
     else:
         print("没有生成任何记录，未导出。")
+        return 0
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Extract journal self-citations from user-supplied .docx articles "
+            "and export structural annotations to Excel."
+        )
+    )
+    parser.add_argument(
+        "--input-dir",
+        type=Path,
+        required=True,
+        help="Directory containing the source .docx articles.",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        required=True,
+        help="Destination .xlsx file.",
+    )
+    parser.add_argument(
+        "--target-year",
+        type=int,
+        required=True,
+        help="Publication year of the target self-cited references.",
+    )
+    parser.add_argument(
+        "--target-journal",
+        action="append",
+        required=True,
+        help=(
+            "Target journal name or name variant. Repeat this option to supply "
+            "multiple variants for the same journal."
+        ),
+    )
+    parser.add_argument(
+        "--abstract-mode",
+        choices=("auto", "inline_header", "after_header"),
+        default="auto",
+        help="Abstract extraction strategy (default: auto).",
+    )
+    parser.add_argument(
+        "--validate-only",
+        action="store_true",
+        help="Validate paths and parameters without processing the articles.",
+    )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Allow replacement of an existing output file.",
+    )
+    return parser
+
+
+def cli() -> None:
+    parser = build_parser()
+    args = parser.parse_args()
+
+    input_folder = args.input_dir.resolve()
+    output_file = args.output.resolve()
+    target_journal_names = [
+        name.strip()
+        for name in args.target_journal
+        if name and name.strip()
+    ]
+
+    if not input_folder.is_dir():
+        parser.error(f"input directory does not exist: {input_folder}")
+    docx_files = sorted_docx_files(str(input_folder))
+    if not docx_files:
+        parser.error(f"no .docx files were found in: {input_folder}")
+    if output_file.suffix.casefold() != ".xlsx":
+        parser.error(f"output must use the .xlsx extension: {output_file}")
+    if not 1900 <= args.target_year <= 2100:
+        parser.error("--target-year must be between 1900 and 2100")
+    if not target_journal_names:
+        parser.error("at least one non-empty --target-journal is required")
+
+    print(f"Input directory: {input_folder}")
+    print(f"DOCX files: {len(docx_files)}")
+    print(f"Output file: {output_file}")
+    print(f"Target year: {args.target_year}")
+    print(f"Target journal variants: {target_journal_names}")
+    print(f"Abstract mode: {args.abstract_mode}")
+
+    if args.validate_only:
+        print("Validation passed; no files were written.")
+        return
+
+    missing_packages = []
+    if docx2txt is None:
+        missing_packages.append("docx2txt")
+    if Document is None:
+        missing_packages.append("python-docx")
+    if missing_packages:
+        parser.error(
+            "missing required package(s): "
+            + ", ".join(missing_packages)
+            + ". Install the repository requirements before processing."
+        )
+
+    if output_file.exists() and not args.overwrite:
+        parser.error(
+            f"output already exists: {output_file}. "
+            "Use --overwrite to replace it."
+        )
+
+    run_pipeline(
+        input_folder=input_folder,
+        output_file=output_file,
+        target_year=args.target_year,
+        target_journal_names=target_journal_names,
+        abstract_mode=args.abstract_mode,
+    )
 
 # =========================
 # 入口
 # =========================
 if __name__ == "__main__":
-    main()
+    cli()

@@ -1,163 +1,395 @@
+"""Clean citation-context text and highlight records that need manual review."""
+
+from __future__ import annotations
+
+import argparse
 import re
+from pathlib import Path
+from typing import Sequence
+
 import pandas as pd
 from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 
 
-# ============================
-# 异常Self-cited Article检测：检查多个年份
-# ============================
-def highlight_multiple_years_in_self_cited_article(self_cited_article: str) -> bool:
-    """
-    检测 Self-cited Article 是否匹配到多个年份，如果有，则返回 True
-    """
+DEFAULT_CITATION_COLUMNS = (
+    "Citation content",
+    "Citation Content",
+    "Citation Content(卤3)",
+    "Citation Content (卤3)",
+)
+DEFAULT_SELF_CITED_COLUMNS = (
+    "Self-cited article",
+    "Self-cited Article",
+    "Self-cited Article title",
+    "Self-cited Article Title",
+)
+
+
+def clean_text(content: object) -> str:
+    """Normalize whitespace and repeated dash characters."""
+    if content is None or pd.isna(content):
+        return ""
+    text = re.sub(r"\s+", " ", str(content))
+    text = re.sub(r"[-\u2013\u2014]{2,}", " ", text)
+    return text.strip()
+
+
+def has_multiple_years(self_cited_article: object) -> bool:
+    """Return True when a self-cited reference contains multiple distinct years."""
     if not isinstance(self_cited_article, str):
         return False
-
-    # 使用非捕获分组，findall 返回完整年份，如 2021 或 2019a
-    years_found = re.findall(r'\b(?:19|20)\d{2}[a-z]?\b', self_cited_article)
-    return len(set(years_found)) > 1
+    years = re.findall(r"\b(?:19|20)\d{2}[a-z]?\b", self_cited_article)
+    return len(set(years)) > 1
 
 
-def highlight_abnormal_length_of_citation(content: str, min_len: int = 350) -> str:
-    content = clean_text(content)
-    print(f"Cleaned content length: {len(content)}")
-    if len(content) < min_len:
-        return "red"   # 过短标红
-    return "none"
+def is_short_citation(content: object, min_length: int = 350) -> bool:
+    """Return True when the cleaned citation context is shorter than min_length."""
+    return len(clean_text(content)) < min_length
 
 
-# ============================
-# 解决异常字符问题
-# ============================
-def highlight_excessive_dashes(content: str) -> bool:
-    """
-    检测并标蓝过多的破折号（'-'、'–'、'—'等）
-    """
+def has_excessive_dashes(content: object, threshold: int = 10) -> bool:
+    """Return True when a citation context contains more than threshold dashes."""
     if not isinstance(content, str):
         return False
-    dash_count = content.count('-') + content.count('–') + content.count('—')
-    return dash_count > 10
+    dash_count = content.count("-") + content.count("\u2013") + content.count("\u2014")
+    return dash_count > threshold
 
 
-# ============================
-# 清洗 Citation Content
-# ============================
-def clean_text(content: str) -> str:
-    """清洗文本中的常见异常字符和格式问题"""
-    if not content or isinstance(content, float):
-        return ""
-    # 去除多余空白
-    content = re.sub(r'\s+', ' ', content)
-    # 去除连续破折号
-    content = re.sub(r'[-\u2013\u2014]{2,}', ' ', content)
-    return content.strip()
+def normalize_header(value: object) -> str:
+    """Normalize a header for case-insensitive matching and stray-space handling."""
+    return re.sub(r"\s+", " ", str(value)).strip().casefold()
 
 
-# ============================
-# 工具函数：智能识别列名
-# ============================
-def detect_col_name(df: pd.DataFrame, candidates) -> str:
-    """
-    在 candidates 中按顺序寻找第一个存在于 df.columns 的列名（大小写精确匹配）。
-    若均不存在，再做一次大小写不敏感匹配。
-    """
-    # 1) 直接匹配
-    for c in candidates:
-        if c in df.columns:
-            return c
-    # 2) 大小写不敏感匹配
-    lower_map = {col.lower(): col for col in df.columns}
-    for c in candidates:
-        if c.lower() in lower_map:
-            return lower_map[c.lower()]
-    raise KeyError(f"未在表头中找到任一候选列: {candidates}. 实际列名为: {list(df.columns)}")
+def detect_column_name(
+    df: pd.DataFrame,
+    candidates: Sequence[str],
+    label: str,
+) -> str:
+    """Return the first matching column, preserving its exact workbook spelling."""
+    for candidate in candidates:
+        if candidate in df.columns:
+            return candidate
+
+    normalized_columns = {
+        normalize_header(column): column
+        for column in df.columns
+    }
+    for candidate in candidates:
+        normalized = normalize_header(candidate)
+        if normalized in normalized_columns:
+            return normalized_columns[normalized]
+
+    raise KeyError(
+        f"Could not find the {label} column. Expected one of {list(candidates)}; "
+        f"found {list(df.columns)}."
+    )
 
 
-# ============================
-# 清洗和标色
-# ============================
-def clean_and_highlight_citation_content(df: pd.DataFrame,
-                                         citation_column: str,
-                                         self_cited_column: str,
-                                         ws) -> pd.DataFrame:
-    """
-    清洗 Citation Content，并标红、标蓝异常内容
-    """
-    red_fill = PatternFill(start_color="FF9999", end_color="FF9999", fill_type="solid")   # 淡红
-    blue_fill = PatternFill(start_color="99CCFF", end_color="99CCFF", fill_type="solid")  # 淡蓝
+def resolve_sheet_name(
+    input_xlsx: Path,
+    requested_sheet: str,
+    citation_candidates: Sequence[str],
+    self_cited_candidates: Sequence[str],
+) -> str:
+    """Resolve a sheet name or automatically select the first compatible sheet."""
+    with pd.ExcelFile(input_xlsx, engine="openpyxl") as workbook:
+        sheet_names = workbook.sheet_names
 
-    cleaned_col = 'Citation Content (±3)_cleaned'
-    if cleaned_col not in df.columns:
-        df[cleaned_col] = df[citation_column].apply(clean_text)
+        if requested_sheet.casefold() == "auto":
+            failures = []
+            for sheet_name in sheet_names:
+                headers = pd.read_excel(
+                    workbook,
+                    sheet_name=sheet_name,
+                    nrows=0,
+                )
+                try:
+                    detect_column_name(headers, citation_candidates, "citation content")
+                    detect_column_name(headers, self_cited_candidates, "self-cited article")
+                    return sheet_name
+                except KeyError as exc:
+                    failures.append(f"{sheet_name}: {exc}")
+            raise KeyError(
+                "No compatible worksheet was found. Checked: "
+                + " | ".join(failures)
+            )
 
-    # 确保在工作表中也有新列的表头（Excel 第1行）
-    cleaned_col_excel_idx = df.columns.get_loc(cleaned_col) + 1  # 1-based
-    if ws.cell(row=1, column=cleaned_col_excel_idx).value != cleaned_col:
-        ws.cell(row=1, column=cleaned_col_excel_idx, value=cleaned_col)
+        if requested_sheet.isdigit():
+            sheet_index = int(requested_sheet)
+            if sheet_index >= len(sheet_names):
+                raise IndexError(
+                    f"Worksheet index {sheet_index} is out of range. "
+                    f"Available sheets: {sheet_names}."
+                )
+            return sheet_names[sheet_index]
 
-    for i, row in df.iterrows():
-        citation_content = row.get(citation_column, "")
-        self_cited_article = row.get(self_cited_column, "")
-
-        # 多年份 -> 标蓝（Self-cited 列）
-        if highlight_multiple_years_in_self_cited_article(self_cited_article):
-            ws.cell(row=i + 2, column=df.columns.get_loc(self_cited_column) + 1).fill = blue_fill
-
-        # 过短 -> 标红（Citation 列）
-        length_status = highlight_abnormal_length_of_citation(citation_content)
-        if length_status == "red":
-            ws.cell(row=i + 2, column=df.columns.get_loc(citation_column) + 1).fill = red_fill
-        # 破折号过多 -> 标蓝（Citation 列）
-        elif highlight_excessive_dashes(citation_content):
-            ws.cell(row=i + 2, column=df.columns.get_loc(citation_column) + 1).fill = blue_fill
-
-        # 写入清洗后的文本
-        ws.cell(row=i + 2, column=cleaned_col_excel_idx).value = row[cleaned_col]
-
-    return df
+        if requested_sheet not in sheet_names:
+            raise KeyError(
+                f"Worksheet '{requested_sheet}' was not found. "
+                f"Available sheets: {sheet_names}."
+            )
+        return requested_sheet
 
 
-def main(input_xlsx: str,
-         output_xlsx: str,
-         sheet_name: int = 0,
-         citation_column_candidates=None,
-         self_cited_column_candidates=None) -> None:
-    if citation_column_candidates is None:
-        # 兼容有/无空格两种
-        citation_column_candidates = ["Citation Content(±3)", "Citation Content (±3)"]
+def validate_workbook(
+    input_xlsx: Path,
+    requested_sheet: str = "auto",
+    citation_candidates: Sequence[str] = DEFAULT_CITATION_COLUMNS,
+    self_cited_candidates: Sequence[str] = DEFAULT_SELF_CITED_COLUMNS,
+) -> tuple[pd.DataFrame, str, str, str]:
+    """Validate the input workbook and return its data and resolved field names."""
+    if not input_xlsx.is_file():
+        raise FileNotFoundError(f"Input workbook does not exist: {input_xlsx}")
+    if input_xlsx.suffix.casefold() != ".xlsx":
+        raise ValueError(f"Input must be an .xlsx file: {input_xlsx}")
 
-    if self_cited_column_candidates is None:
-        # 兼容两种写法 + 常见首字母大写变体
-        self_cited_column_candidates = [
-            "Self-cited Article",
-            "Self-cited Article title",
-            "Self-cited Article Title"
-        ]
+    sheet_name = resolve_sheet_name(
+        input_xlsx,
+        requested_sheet,
+        citation_candidates,
+        self_cited_candidates,
+    )
+    df = pd.read_excel(
+        input_xlsx,
+        sheet_name=sheet_name,
+        engine="openpyxl",
+    )
+    citation_column = detect_column_name(
+        df,
+        citation_candidates,
+        "citation content",
+    )
+    self_cited_column = detect_column_name(
+        df,
+        self_cited_candidates,
+        "self-cited article",
+    )
+    return df, sheet_name, citation_column, self_cited_column
 
-    # 读数据
-    df = pd.read_excel(input_xlsx, sheet_name=sheet_name, engine="openpyxl")
 
-    # 自动识别两类列名
-    citation_column = detect_col_name(df, citation_column_candidates)
-    self_cited_column = detect_col_name(df, self_cited_column_candidates)
-    print(f"使用列：citation_column = '{citation_column}', self_cited_column = '{self_cited_column}'")
+def clean_and_highlight(
+    df: pd.DataFrame,
+    citation_column: str,
+    self_cited_column: str,
+    worksheet,
+    min_length: int,
+) -> dict[str, int]:
+    """Write cleaned text and apply review highlights to the selected worksheet."""
+    red_fill = PatternFill(
+        start_color="FF9999",
+        end_color="FF9999",
+        fill_type="solid",
+    )
+    blue_fill = PatternFill(
+        start_color="99CCFF",
+        end_color="99CCFF",
+        fill_type="solid",
+    )
 
-    # 打开工作簿与工作表
-    wb = load_workbook(input_xlsx)
-    sheet_names = wb.sheetnames
-    print(f"工作簿中的工作表名称: {sheet_names}")
-    ws = wb[sheet_names[sheet_name]]
+    cleaned_column = f"{citation_column}_cleaned"
+    cleaned_values = df[citation_column].map(clean_text)
+    cleaned_column_index = len(df.columns) + 1
 
-    # 清洗 + 高亮
-    df = clean_and_highlight_citation_content(df, citation_column, self_cited_column, ws)
+    existing_headers = {
+        worksheet.cell(row=1, column=index).value: index
+        for index in range(1, worksheet.max_column + 1)
+    }
+    if cleaned_column in existing_headers:
+        cleaned_column_index = existing_headers[cleaned_column]
+    else:
+        worksheet.cell(
+            row=1,
+            column=cleaned_column_index,
+            value=cleaned_column,
+        )
 
-    # 保存到新文件
-    wb.save(output_xlsx)
-    print(f"✅ 已完成处理，输出：{output_xlsx}")
+    citation_column_index = df.columns.get_loc(citation_column) + 1
+    self_cited_column_index = df.columns.get_loc(self_cited_column) + 1
+    counts = {
+        "rows": len(df),
+        "multiple_years": 0,
+        "short_citations": 0,
+        "excessive_dashes": 0,
+    }
+
+    for row_offset, (_, row) in enumerate(df.iterrows(), start=2):
+        citation_content = row.get(citation_column)
+        self_cited_article = row.get(self_cited_column)
+
+        if has_multiple_years(self_cited_article):
+            worksheet.cell(
+                row=row_offset,
+                column=self_cited_column_index,
+            ).fill = blue_fill
+            counts["multiple_years"] += 1
+
+        if is_short_citation(citation_content, min_length=min_length):
+            worksheet.cell(
+                row=row_offset,
+                column=citation_column_index,
+            ).fill = red_fill
+            counts["short_citations"] += 1
+        elif has_excessive_dashes(citation_content):
+            worksheet.cell(
+                row=row_offset,
+                column=citation_column_index,
+            ).fill = blue_fill
+            counts["excessive_dashes"] += 1
+
+        worksheet.cell(
+            row=row_offset,
+            column=cleaned_column_index,
+            value=cleaned_values.iloc[row_offset - 2],
+        )
+
+    return counts
+
+
+def process_workbook(
+    input_xlsx: Path,
+    output_xlsx: Path,
+    requested_sheet: str = "auto",
+    citation_candidates: Sequence[str] = DEFAULT_CITATION_COLUMNS,
+    self_cited_candidates: Sequence[str] = DEFAULT_SELF_CITED_COLUMNS,
+    min_length: int = 350,
+    overwrite: bool = False,
+) -> dict[str, int]:
+    """Validate, clean, highlight, and save a copy of an annotation workbook."""
+    df, sheet_name, citation_column, self_cited_column = validate_workbook(
+        input_xlsx,
+        requested_sheet=requested_sheet,
+        citation_candidates=citation_candidates,
+        self_cited_candidates=self_cited_candidates,
+    )
+
+    if input_xlsx.resolve() == output_xlsx.resolve():
+        raise ValueError("The output path must differ from the input path.")
+    if output_xlsx.exists() and not overwrite:
+        raise FileExistsError(
+            f"Output already exists: {output_xlsx}. "
+            "Use --overwrite to replace it."
+        )
+
+    workbook = load_workbook(input_xlsx)
+    worksheet = workbook[sheet_name]
+    counts = clean_and_highlight(
+        df,
+        citation_column,
+        self_cited_column,
+        worksheet,
+        min_length=min_length,
+    )
+
+    output_xlsx.parent.mkdir(parents=True, exist_ok=True)
+    workbook.save(output_xlsx)
+    return counts
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Clean citation-context text and highlight records that need "
+            "manual review in an annotation workbook."
+        )
+    )
+    parser.add_argument("input_xlsx", type=Path, help="Input .xlsx workbook.")
+    parser.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        help=(
+            "Output .xlsx workbook. Defaults to "
+            "<input_stem>_checked.xlsx beside the input file."
+        ),
+    )
+    parser.add_argument(
+        "--sheet",
+        default="auto",
+        help=(
+            "Worksheet name or zero-based index. The default, 'auto', selects "
+            "the first sheet containing the required columns."
+        ),
+    )
+    parser.add_argument(
+        "--citation-column",
+        help="Exact citation-content column name, if automatic detection is unsuitable.",
+    )
+    parser.add_argument(
+        "--self-cited-column",
+        help="Exact self-cited-article column name, if automatic detection is unsuitable.",
+    )
+    parser.add_argument(
+        "--min-length",
+        type=int,
+        default=350,
+        help="Minimum cleaned citation-context length (default: 350 characters).",
+    )
+    parser.add_argument(
+        "--validate-only",
+        action="store_true",
+        help="Validate the workbook, sheet, and columns without creating output.",
+    )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Allow replacement of an existing output file (never the input file).",
+    )
+    return parser
+
+
+def cli() -> None:
+    args = build_parser().parse_args()
+    if args.min_length < 0:
+        raise ValueError("--min-length must be zero or greater.")
+
+    citation_candidates = (
+        (args.citation_column,)
+        if args.citation_column
+        else DEFAULT_CITATION_COLUMNS
+    )
+    self_cited_candidates = (
+        (args.self_cited_column,)
+        if args.self_cited_column
+        else DEFAULT_SELF_CITED_COLUMNS
+    )
+
+    input_xlsx = args.input_xlsx
+    output_xlsx = args.output or input_xlsx.with_name(
+        f"{input_xlsx.stem}_checked.xlsx"
+    )
+
+    if args.validate_only:
+        df, sheet_name, citation_column, self_cited_column = validate_workbook(
+            input_xlsx,
+            requested_sheet=args.sheet,
+            citation_candidates=citation_candidates,
+            self_cited_candidates=self_cited_candidates,
+        )
+        print(f"Validation passed: {input_xlsx}")
+        print(f"Worksheet: {sheet_name}")
+        print(f"Rows: {len(df)}")
+        print(f"Citation column: {citation_column}")
+        print(f"Self-cited article column: {self_cited_column}")
+        return
+
+    counts = process_workbook(
+        input_xlsx,
+        output_xlsx,
+        requested_sheet=args.sheet,
+        citation_candidates=citation_candidates,
+        self_cited_candidates=self_cited_candidates,
+        min_length=args.min_length,
+        overwrite=args.overwrite,
+    )
+    print(f"Completed: {output_xlsx}")
+    print(
+        "Review flags: "
+        f"{counts['short_citations']} short citation contexts, "
+        f"{counts['excessive_dashes']} contexts with excessive dashes, "
+        f"{counts['multiple_years']} self-cited references with multiple years."
+    )
 
 
 if __name__ == "__main__":
-    input_xlsx = "./input/your_annotation_file.xlsx"
-    output_xlsx = "./output/your_annotation_file_checked.xlsx"
-    main(input_xlsx, output_xlsx)
+    cli()

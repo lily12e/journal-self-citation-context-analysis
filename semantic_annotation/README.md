@@ -6,7 +6,28 @@
 accepts `Self-cited Article Index` as an alias for
 `Self-citing Article Index`.
 
-Required columns:
+The two released test-set files have distinct roles:
+
+- `training_data/test_set_84.xlsx` is the manually annotated source workbook;
+- `training_data/test_set_84.jsonl` is the API-ready chat-format file used by
+  `train_finetune.py`.
+
+The fine-tuning script does not read the Excel workbook directly. The
+conversion script performs the following deterministic schema mapping:
+
+| Released Excel column | JSONL destination |
+|---|---|
+| `Self-citing Article Index` | `Self-cited Article Index` in the user message |
+| `Self-cited Article Title` | `Self-cited Article Title` in the user message |
+| `Citation Content` | `Citation Content` in the user message |
+| `citation location` | `Citation Location` in the user message |
+| `citation function` | `Final Citation Function` in the assistant message |
+| `citation depth` | `Final Citation Depth` in the assistant message |
+
+The duplicate `ai结果` columns in the source workbook record historical model
+comparisons and are not used to construct the fine-tuning file.
+
+Required source columns:
 
 ```text
 Self-citing Article Index (or Self-cited Article Index)
@@ -26,6 +47,13 @@ and using the short prompt:
 ```text
 python build_training_data.py --input training_data/test_set_84.xlsx --train-output training_data/test_set_84_rebuilt.jsonl --long-prompt-rate 0 --no-shuffle
 ```
+
+This command produces 84 JSON objects identical to those in the released
+`test_set_84.jsonl`; differences in line-ending style, if any, do not change
+the parsed JSON content.
+
+`data/full_annotation_results.xlsx` is the downstream final analysis dataset,
+not the source workbook for reconstructing the fine-tuning test file.
 
 To create a deterministic training/validation split:
 

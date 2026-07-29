@@ -31,6 +31,7 @@ categories.
 │       ├── batch2_train_55.jsonl
 │       ├── batch2_val_20.jsonl
 │       ├── batch3_train_53.jsonl
+│       ├── test_set_84.xlsx
 │       ├── test_set_84.jsonl
 │       └── fine_tuned_model_v1/v2/v3.txt
 ├── semantic_similarity/
@@ -126,7 +127,10 @@ without those source documents.
 
 1. `structural_annotation.py` extracts in-text citations and annotates
    citation position, distance, and strength.
-2. `build_training_data.py` converts manually annotated Excel rows to JSONL.
+2. `build_training_data.py` converts manually annotated Excel rows to
+   API-ready JSONL. For the released test set, `test_set_84.xlsx` is the
+   annotated source and `test_set_84.jsonl` is the exact derived file supplied
+   to the fine-tuning workflow.
 3. `train_finetune.py` submits an optional API-based fine-tuning job for
    citation function and depth.
 4. `citation_content_filtering.py` performs optional API-based filtering of

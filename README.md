@@ -44,7 +44,19 @@ categories.
 ├── data/
 │   ├── full_annotation_results.xlsx
 │   ├── citation_extraction_validation.xlsx
-│   └── inter_annotator_agreement.xlsx
+│   ├── inter_annotator_agreement.xlsx
+│   └── sample_selection_counts.csv
+├── analysis/
+│   ├── prepare_analysis_data.py
+│   ├── evaluate_annotation.py
+│   ├── run_full_analysis.py
+│   ├── export_report_tables.py
+│   ├── results/
+│   └── report_tables/
+├── figure_sources/
+│   ├── data_figures.prism
+│   └── manuscript_diagrams.vsdx
+├── REPRODUCIBILITY.md
 ├── requirements.txt
 └── README.md
 ```
@@ -138,6 +150,13 @@ without those source documents.
 5. `similarity_computation.py` computes BERT-whitening semantic similarity.
 
 Subdirectory READMEs provide commands and file-specific notes.
+
+## Reproducibility map
+
+`REPRODUCIBILITY.md` maps every main-text and supplementary table and figure
+to its exact source data, analysis or generation file, and report-facing
+output. The statistical workflow and commands are documented in
+`analysis/README.md`.
 
 ## Citation
 

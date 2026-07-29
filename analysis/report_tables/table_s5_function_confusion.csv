@@ -1,0 +1,11 @@
+﻿True label,Affirmation,Application,Comparison,Comparison between Related Work,Extension,Future work,Historical background,Inspiration,Related work,Simple mention
+Affirmation,5,3,0,0,0,0,0,0,0,0
+Application,0,4,0,0,0,0,0,0,0,0
+Comparison,0,0,2,0,0,0,0,0,0,0
+Comparison between Related Work,0,0,0,0,0,0,0,0,1,0
+Extension,0,0,0,0,0,0,0,1,0,0
+Future work,0,0,0,0,0,2,0,0,0,0
+Historical background,0,0,0,0,0,0,2,0,2,15
+Inspiration,0,3,0,0,0,0,0,2,0,0
+Related work,1,1,0,0,0,0,0,0,19,3
+Simple mention,0,4,0,0,0,0,0,0,2,12

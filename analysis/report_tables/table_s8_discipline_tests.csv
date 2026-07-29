@@ -1,0 +1,31 @@
+﻿JCR category,Dimension,Test,Statistic,df,Asymptotic p,Monte Carlo p,Effect size,Effect-size measure,n
+Information Science & Library Science,Citation position,Pearson chi-square,24.696456553767938,4,5.789702165419193e-05,7.999840003199936e-05,0.1975219969103605,Cramer's V,633
+Information Science & Library Science,Citation distance,Pearson chi-square,118.40897527799874,4,1.1680100489153675e-24,1.999960000799984e-05,0.4325043266145234,Cramer's V,633
+Information Science & Library Science,Citation strength,Pearson chi-square,4.680956614326606,4,0.32162651282788257,0.30311393772124556,0.09773930981083914,Cramer's V,490
+Information Science & Library Science,Citation function,Pearson chi-square,41.978216732948155,12,3.3587542852461674e-05,0.00011999760004799904,0.25751951024401276,Cramer's V,633
+Information Science & Library Science,Citation depth,Pearson chi-square,81.8006622550834,2,1.726680098023515e-18,1.999960000799984e-05,0.3594815079936508,Cramer's V,633
+Information Science & Library Science,Semantic similarity,Mann-Whitney U,15310.5,,8.354146259919254e-13,,0.44341646066598805,Rank-biserial correlation,633
+Gerontology,Citation position,Pearson chi-square,69.20938555862264,4,3.333343890328381e-14,1.999960000799984e-05,0.576833971407979,Cramer's V,208
+Gerontology,Citation distance,Pearson chi-square,115.62364034447751,4,4.593144738339526e-24,1.999960000799984e-05,0.7455755402851723,Cramer's V,208
+Gerontology,Citation strength,Pearson chi-square,10.349171744027174,4,0.034939263377065204,0.03635927281454371,0.25923428384813296,Cramer's V,154
+Gerontology,Citation function,Pearson chi-square,24.321367960580602,12,0.018387112530290226,0.009839803203935921,0.34194978236085705,Cramer's V,208
+Gerontology,Citation depth,Pearson chi-square,1.0760339516498774,2,0.5839050027993851,0.5854082918341633,0.0719252400215868,Cramer's V,208
+Gerontology,Semantic similarity,Mann-Whitney U,3365.0,,0.004659839511257617,,0.24947027991524484,Rank-biserial correlation,208
+"Engineering, Multidisciplinary",Citation position,Pearson chi-square,31.587420165660546,4,2.3228732555096596e-06,0.0002799944001119978,0.16816301765373537,Cramer's V,1117
+"Engineering, Multidisciplinary",Citation distance,Pearson chi-square,20.47458499570879,4,0.00040240377283944784,0.000499990000199996,0.13538824769816463,Cramer's V,1117
+"Engineering, Multidisciplinary",Citation strength,Pearson chi-square,2.979555075153482,4,0.561252619076781,0.5524489510209796,0.05773071673324433,Cramer's V,894
+"Engineering, Multidisciplinary",Citation function,Pearson chi-square,13.102335947035312,12,0.361646575393061,0.33085338293234134,0.10830481846945758,Cramer's V,1117
+"Engineering, Multidisciplinary",Citation depth,Pearson chi-square,5.739677956318257,2,0.05670805708046558,0.05421891562168757,0.07168316564321277,Cramer's V,1117
+"Engineering, Multidisciplinary",Semantic similarity,Mann-Whitney U,11725.0,,0.2274872798246472,,0.14102564102564108,Rank-biserial correlation,1117
+Veterinary Sciences,Citation position,Pearson chi-square,79.04682477386558,3,4.914460651130353e-17,1.999960000799984e-05,0.7259330766852896,Cramer's V,150
+Veterinary Sciences,Citation distance,Pearson chi-square,72.2743699128003,4,7.509810227105706e-15,1.999960000799984e-05,0.6941391306877909,Cramer's V,150
+Veterinary Sciences,Citation strength,Pearson chi-square,7.0004614099350935,3,0.07188306724684572,0.06551868962620748,0.22604923903140997,Cramer's V,137
+Veterinary Sciences,Citation function,Pearson chi-square,64.43941528325657,9,1.854260141331918e-10,1.999960000799984e-05,0.6554358106545424,Cramer's V,150
+Veterinary Sciences,Citation depth,Pearson chi-square,32.018987779842774,2,1.1147183376608378e-07,1.999960000799984e-05,0.46201722752759466,Cramer's V,150
+Veterinary Sciences,Semantic similarity,Mann-Whitney U,986.0,,6.937206515224182e-10,,0.6130298273155417,Rank-biserial correlation,150
+Geography,Citation position,Pearson chi-square,14.971641209165771,4,0.0047603980123787,0.004799904001919961,0.21397391313437253,Cramer's V,327
+Geography,Citation distance,Pearson chi-square,55.14636604175723,4,3.027452852955198e-11,1.999960000799984e-05,0.41066205233575626,Cramer's V,327
+Geography,Citation strength,Pearson chi-square,32.95886644219978,4,1.2178686005471154e-06,1.999960000799984e-05,0.398065432641949,Cramer's V,208
+Geography,Citation function,Pearson chi-square,55.70723694364295,12,1.3511973315232346e-07,1.999960000799984e-05,0.41274510628647565,Cramer's V,327
+Geography,Citation depth,Pearson chi-square,12.229979572516134,2,0.0022094983365463215,0.001879962400751985,0.19339221585013572,Cramer's V,327
+Geography,Semantic similarity,Mann-Whitney U,7493.5,,0.0008198515776961873,,0.24786710830071268,Rank-biserial correlation,327

@@ -1,0 +1,322 @@
+{
+  "inputs": {
+    "agreementFile": "data/inter_annotator_agreement.xlsx",
+    "agreementSheet": "2022人工标注对照表",
+    "agreementColumns": {
+      "citationFunction": [
+        "K",
+        "L"
+      ],
+      "citationDepth": [
+        "M",
+        "N"
+      ]
+    },
+    "testSetFile": "semantic_annotation/training_data/test_set_84.xlsx",
+    "testSetColumns": {
+      "citationFunction": [
+        "E",
+        "F"
+      ],
+      "citationDepth": [
+        "G",
+        "H"
+      ]
+    }
+  },
+  "interAnnotatorAgreement": {
+    "citationFunction": {
+      "n": 39,
+      "observedAgreement": 0.7948717948717948,
+      "expectedAgreement": 0.20907297830374755,
+      "cohenKappa": 0.7406483790523689
+    },
+    "citationDepth": {
+      "n": 39,
+      "observedAgreement": 0.8461538461538461,
+      "expectedAgreement": 0.4832347140039448,
+      "cohenKappa": 0.7022900763358778
+    }
+  },
+  "heldOutModelEvaluation": {
+    "citationFunction": {
+      "n": 84,
+      "accuracy": 0.5714285714285714,
+      "labels": [
+        "Affirmation",
+        "Application",
+        "Comparison",
+        "Comparison between Related Work",
+        "Extension",
+        "Future work",
+        "Historical background",
+        "Inspiration",
+        "Related work",
+        "Simple mention"
+      ],
+      "categoryMetrics": [
+        {
+          "category": "Affirmation",
+          "precision": 0.8333333333333334,
+          "recall": 0.625,
+          "f1": 0.7142857142857143,
+          "support": 8
+        },
+        {
+          "category": "Application",
+          "precision": 0.26666666666666666,
+          "recall": 1.0,
+          "f1": 0.4210526315789474,
+          "support": 4
+        },
+        {
+          "category": "Comparison",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        {
+          "category": "Comparison between Related Work",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        {
+          "category": "Extension",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        {
+          "category": "Future work",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        {
+          "category": "Historical background",
+          "precision": 1.0,
+          "recall": 0.10526315789473684,
+          "f1": 0.1904761904761905,
+          "support": 19
+        },
+        {
+          "category": "Inspiration",
+          "precision": 0.6666666666666666,
+          "recall": 0.4,
+          "f1": 0.5,
+          "support": 5
+        },
+        {
+          "category": "Related work",
+          "precision": 0.7916666666666666,
+          "recall": 0.7916666666666666,
+          "f1": 0.7916666666666666,
+          "support": 24
+        },
+        {
+          "category": "Simple mention",
+          "precision": 0.4,
+          "recall": 0.6666666666666666,
+          "f1": 0.5,
+          "support": 18
+        }
+      ],
+      "macroAverage": {
+        "precision": 0.5958333333333333,
+        "recall": 0.5588596491228071,
+        "f1": 0.5117481203007519
+      },
+      "weightedAverage": {
+        "precision": 0.7174603174603175,
+        "recall": 0.5714285714285714,
+        "f1": 0.5418755221386801
+      },
+      "confusionMatrix": {
+        "Affirmation": {
+          "Affirmation": 5,
+          "Application": 3,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 0,
+          "Inspiration": 0,
+          "Related work": 0,
+          "Simple mention": 0
+        },
+        "Application": {
+          "Affirmation": 0,
+          "Application": 4,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 0,
+          "Inspiration": 0,
+          "Related work": 0,
+          "Simple mention": 0
+        },
+        "Comparison": {
+          "Affirmation": 0,
+          "Application": 0,
+          "Comparison": 2,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 0,
+          "Inspiration": 0,
+          "Related work": 0,
+          "Simple mention": 0
+        },
+        "Comparison between Related Work": {
+          "Affirmation": 0,
+          "Application": 0,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 0,
+          "Inspiration": 0,
+          "Related work": 1,
+          "Simple mention": 0
+        },
+        "Extension": {
+          "Affirmation": 0,
+          "Application": 0,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 0,
+          "Inspiration": 1,
+          "Related work": 0,
+          "Simple mention": 0
+        },
+        "Future work": {
+          "Affirmation": 0,
+          "Application": 0,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 2,
+          "Historical background": 0,
+          "Inspiration": 0,
+          "Related work": 0,
+          "Simple mention": 0
+        },
+        "Historical background": {
+          "Affirmation": 0,
+          "Application": 0,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 2,
+          "Inspiration": 0,
+          "Related work": 2,
+          "Simple mention": 15
+        },
+        "Inspiration": {
+          "Affirmation": 0,
+          "Application": 3,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 0,
+          "Inspiration": 2,
+          "Related work": 0,
+          "Simple mention": 0
+        },
+        "Related work": {
+          "Affirmation": 1,
+          "Application": 1,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 0,
+          "Inspiration": 0,
+          "Related work": 19,
+          "Simple mention": 3
+        },
+        "Simple mention": {
+          "Affirmation": 0,
+          "Application": 4,
+          "Comparison": 0,
+          "Comparison between Related Work": 0,
+          "Extension": 0,
+          "Future work": 0,
+          "Historical background": 0,
+          "Inspiration": 0,
+          "Related work": 2,
+          "Simple mention": 12
+        }
+      }
+    },
+    "citationDepth": {
+      "n": 84,
+      "accuracy": 0.8214285714285714,
+      "labels": [
+        "Deep citation",
+        "Moderate citation",
+        "Shallow citation"
+      ],
+      "categoryMetrics": [
+        {
+          "category": "Deep citation",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        {
+          "category": "Moderate citation",
+          "precision": 0.5714285714285714,
+          "recall": 0.8421052631578947,
+          "f1": 0.6808510638297872,
+          "support": 19
+        },
+        {
+          "category": "Shallow citation",
+          "precision": 0.9464285714285714,
+          "recall": 0.8983050847457628,
+          "f1": 0.9217391304347826,
+          "support": 59
+        }
+      ],
+      "macroAverage": {
+        "precision": 0.5059523809523809,
+        "recall": 0.5801367826345525,
+        "f1": 0.5341967314215234
+      },
+      "weightedAverage": {
+        "precision": 0.7940051020408163,
+        "recall": 0.8214285714285714,
+        "f1": 0.8014140346240253
+      },
+      "confusionMatrix": {
+        "Deep citation": {
+          "Deep citation": 0,
+          "Moderate citation": 6,
+          "Shallow citation": 0
+        },
+        "Moderate citation": {
+          "Deep citation": 0,
+          "Moderate citation": 16,
+          "Shallow citation": 3
+        },
+        "Shallow citation": {
+          "Deep citation": 0,
+          "Moderate citation": 6,
+          "Shallow citation": 53
+        }
+      }
+    }
+  }
+}

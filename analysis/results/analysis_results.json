@@ -1,0 +1,6895 @@
+{
+  "metadata": {
+    "analysisDate": "2026-07-26",
+    "baseSeed": 20260726,
+    "monteCarloAggregateIterations": 100000,
+    "monteCarloFieldIterations": 50000,
+    "bootstrapIterations": 2000,
+    "groupDifferenceDirection": "G1 minus G2"
+  },
+  "qc": {
+    "source": "data/full_annotation_results.xlsx",
+    "sheet": "Table S2",
+    "range": "A1:M2436",
+    "mentions": 2435,
+    "mentionsByGroup": {
+      "G1": 1947,
+      "G2": 488
+    },
+    "articles": 1021,
+    "articlesByGroup": {
+      "G1": 794,
+      "G2": 227
+    },
+    "strengthOccurrences": 1883,
+    "strengthByGroup": {
+      "G1": 1582,
+      "G2": 301
+    },
+    "wrongTitlePairDeduplication": {
+      "total": 2084,
+      "byLabel": {
+        "G1-1": 412,
+        "G1-2": 142,
+        "G1-3": 1011,
+        "G1-4": 96,
+        "G1-5": 81,
+        "G2-1": 76,
+        "G2-2": 60,
+        "G2-3": 20,
+        "G2-4": 43,
+        "G2-5": 143
+      }
+    },
+    "positionRawCounts": {
+      "Discussion": 280,
+      "Introduction": 1241,
+      "Methods": 382,
+      "Related work": 305,
+      "Results": 126,
+      "discussion": 101
+    },
+    "functionCategories": [
+      "Affirmation",
+      "Application",
+      "Comparison",
+      "Comparison between Related Work",
+      "Elaborated Citation",
+      "Extension",
+      "Foundation",
+      "Further reading",
+      "Future work",
+      "Historical background",
+      "Inspiration",
+      "Related work",
+      "Similarity",
+      "Simple mention"
+    ],
+    "depthCategories": [
+      "Deep citation",
+      "Moderate citation",
+      "Shallow citation"
+    ],
+    "strengthAnomalyBlocks": 123,
+    "strengthAnomalies": [
+      {
+        "strengthId": "S0069",
+        "sourceRow": 85,
+        "label": "G1-1",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0022",
+          "A0023"
+        ],
+        "selfCitedStringCount": 1,
+        "flags": [
+          "block_crosses_article_boundary"
+        ]
+      },
+      {
+        "strengthId": "S0416",
+        "sourceRow": 532,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0127"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0420",
+        "sourceRow": 537,
+        "label": "G1-2",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0129"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0430",
+        "sourceRow": 549,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0132"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0431",
+        "sourceRow": 551,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0132"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0432",
+        "sourceRow": 553,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0132"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0433",
+        "sourceRow": 555,
+        "label": "G1-2",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0133"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0434",
+        "sourceRow": 559,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0133"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0438",
+        "sourceRow": 564,
+        "label": "G1-2",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0135"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0440",
+        "sourceRow": 568,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0135"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0443",
+        "sourceRow": 572,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0138"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0444",
+        "sourceRow": 574,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0138"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0462",
+        "sourceRow": 593,
+        "label": "G1-2",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0145"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0465",
+        "sourceRow": 598,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0148"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0466",
+        "sourceRow": 600,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0148"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0467",
+        "sourceRow": 602,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0148"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0482",
+        "sourceRow": 618,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0154"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0484",
+        "sourceRow": 621,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0154"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0488",
+        "sourceRow": 626,
+        "label": "G1-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0155"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0541",
+        "sourceRow": 685,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0180"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0589",
+        "sourceRow": 738,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0218"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0602",
+        "sourceRow": 752,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0228"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0604",
+        "sourceRow": 755,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0228"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0608",
+        "sourceRow": 760,
+        "label": "G1-3",
+        "strength": 13,
+        "blockRows": 13,
+        "articleIds": [
+          "A0232"
+        ],
+        "selfCitedStringCount": 13,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0610",
+        "sourceRow": 774,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0234"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0612",
+        "sourceRow": 777,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0234"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0621",
+        "sourceRow": 787,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0238"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0629",
+        "sourceRow": 796,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0242"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0630",
+        "sourceRow": 798,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0243"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0639",
+        "sourceRow": 808,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0250"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0665",
+        "sourceRow": 835,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0265"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0674",
+        "sourceRow": 845,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0271"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0675",
+        "sourceRow": 847,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0272"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0677",
+        "sourceRow": 850,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0273"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0678",
+        "sourceRow": 852,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0273"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0700",
+        "sourceRow": 875,
+        "label": "G1-3",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0291"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0701",
+        "sourceRow": 879,
+        "label": "G1-3",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0291"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0703",
+        "sourceRow": 883,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0293",
+          "A0294"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "block_crosses_article_boundary",
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0707",
+        "sourceRow": 888,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0297"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0708",
+        "sourceRow": 890,
+        "label": "G1-3",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0298"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0711",
+        "sourceRow": 896,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0300"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0712",
+        "sourceRow": 898,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0300"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0747",
+        "sourceRow": 934,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0323"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0775",
+        "sourceRow": 963,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0341"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0776",
+        "sourceRow": 965,
+        "label": "G1-3",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0341"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0777",
+        "sourceRow": 968,
+        "label": "G1-3",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0342"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0778",
+        "sourceRow": 971,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0343"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0791",
+        "sourceRow": 985,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0351"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0795",
+        "sourceRow": 990,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0355"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0799",
+        "sourceRow": 995,
+        "label": "G1-3",
+        "strength": 5,
+        "blockRows": 5,
+        "articleIds": [
+          "A0356"
+        ],
+        "selfCitedStringCount": 5,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0800",
+        "sourceRow": 1000,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0356"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0801",
+        "sourceRow": 1002,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0356"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0817",
+        "sourceRow": 1019,
+        "label": "G1-3",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0368"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0829",
+        "sourceRow": 1033,
+        "label": "G1-3",
+        "strength": 5,
+        "blockRows": 5,
+        "articleIds": [
+          "A0378"
+        ],
+        "selfCitedStringCount": 5,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0837",
+        "sourceRow": 1045,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0381"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0850",
+        "sourceRow": 1060,
+        "label": "G1-3",
+        "strength": 9,
+        "blockRows": 9,
+        "articleIds": [
+          "A0392"
+        ],
+        "selfCitedStringCount": 9,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0864",
+        "sourceRow": 1082,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0400"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0865",
+        "sourceRow": 1084,
+        "label": "G1-3",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0401"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0882",
+        "sourceRow": 1104,
+        "label": "G1-3",
+        "strength": 5,
+        "blockRows": 5,
+        "articleIds": [
+          "A0409"
+        ],
+        "selfCitedStringCount": 5,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0884",
+        "sourceRow": 1110,
+        "label": "G1-3",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0410"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0916",
+        "sourceRow": 1145,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0426"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0931",
+        "sourceRow": 1161,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0434"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0944",
+        "sourceRow": 1175,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0440"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0945",
+        "sourceRow": 1177,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0441"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0946",
+        "sourceRow": 1179,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0441"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0947",
+        "sourceRow": 1181,
+        "label": "G1-3",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0442"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0957",
+        "sourceRow": 1194,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0448"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0969",
+        "sourceRow": 1207,
+        "label": "G1-3",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0454"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0975",
+        "sourceRow": 1216,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0459"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S0976",
+        "sourceRow": 1218,
+        "label": "G1-3",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0459"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1034",
+        "sourceRow": 1283,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0495"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1040",
+        "sourceRow": 1290,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0499"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1214",
+        "sourceRow": 1494,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0597"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1232",
+        "sourceRow": 1515,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0608"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1266",
+        "sourceRow": 1561,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0628"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1267",
+        "sourceRow": 1563,
+        "label": "G1-3",
+        "strength": 5,
+        "blockRows": 5,
+        "articleIds": [
+          "A0629"
+        ],
+        "selfCitedStringCount": 5,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1268",
+        "sourceRow": 1568,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0629"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1269",
+        "sourceRow": 1570,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0629"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1284",
+        "sourceRow": 1586,
+        "label": "G1-3",
+        "strength": 8,
+        "blockRows": 8,
+        "articleIds": [
+          "A0637"
+        ],
+        "selfCitedStringCount": 8,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1292",
+        "sourceRow": 1601,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0641"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1295",
+        "sourceRow": 1605,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0643"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1296",
+        "sourceRow": 1607,
+        "label": "G1-3",
+        "strength": 6,
+        "blockRows": 6,
+        "articleIds": [
+          "A0643"
+        ],
+        "selfCitedStringCount": 6,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1306",
+        "sourceRow": 1622,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0647"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1313",
+        "sourceRow": 1630,
+        "label": "G1-3",
+        "strength": 5,
+        "blockRows": 5,
+        "articleIds": [
+          "A0650"
+        ],
+        "selfCitedStringCount": 5,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1328",
+        "sourceRow": 1650,
+        "label": "G1-3",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0659"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1329",
+        "sourceRow": 1653,
+        "label": "G1-3",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0659"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1330",
+        "sourceRow": 1657,
+        "label": "G1-3",
+        "strength": 5,
+        "blockRows": 5,
+        "articleIds": [
+          "A0659"
+        ],
+        "selfCitedStringCount": 5,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1350",
+        "sourceRow": 1681,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0670"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1354",
+        "sourceRow": 1686,
+        "label": "G1-3",
+        "strength": 13,
+        "blockRows": 13,
+        "articleIds": [
+          "A0673"
+        ],
+        "selfCitedStringCount": 13,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1355",
+        "sourceRow": 1699,
+        "label": "G1-3",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0673"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1356",
+        "sourceRow": 1702,
+        "label": "G1-3",
+        "strength": 5,
+        "blockRows": 5,
+        "articleIds": [
+          "A0673"
+        ],
+        "selfCitedStringCount": 5,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1368",
+        "sourceRow": 1718,
+        "label": "G1-3",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0679"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1379",
+        "sourceRow": 1732,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0684"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1383",
+        "sourceRow": 1741,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0687"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1390",
+        "sourceRow": 1749,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0691"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1393",
+        "sourceRow": 1753,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0693"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1399",
+        "sourceRow": 1760,
+        "label": "G1-3",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0697"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1431",
+        "sourceRow": 1795,
+        "label": "G1-4",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0716"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1567",
+        "sourceRow": 1932,
+        "label": "G1-5",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0786"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1627",
+        "sourceRow": 2004,
+        "label": "G2-1",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0827",
+          "A0828"
+        ],
+        "selfCitedStringCount": 1,
+        "flags": [
+          "block_crosses_article_boundary"
+        ]
+      },
+      {
+        "strengthId": "S1661",
+        "sourceRow": 2055,
+        "label": "G2-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0849"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1662",
+        "sourceRow": 2057,
+        "label": "G2-2",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0850"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1667",
+        "sourceRow": 2064,
+        "label": "G2-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0855"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1668",
+        "sourceRow": 2066,
+        "label": "G2-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0856"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1669",
+        "sourceRow": 2068,
+        "label": "G2-2",
+        "strength": 7,
+        "blockRows": 7,
+        "articleIds": [
+          "A0857"
+        ],
+        "selfCitedStringCount": 7,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1670",
+        "sourceRow": 2075,
+        "label": "G2-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0858"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1673",
+        "sourceRow": 2079,
+        "label": "G2-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0861"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1674",
+        "sourceRow": 2081,
+        "label": "G2-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0862"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1676",
+        "sourceRow": 2085,
+        "label": "G2-2",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A0864"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1688",
+        "sourceRow": 2099,
+        "label": "G2-2",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A0875"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1691",
+        "sourceRow": 2105,
+        "label": "G2-2",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0878"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1692",
+        "sourceRow": 2107,
+        "label": "G2-2",
+        "strength": 6,
+        "blockRows": 6,
+        "articleIds": [
+          "A0879"
+        ],
+        "selfCitedStringCount": 6,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1746",
+        "sourceRow": 2178,
+        "label": "G2-4",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0919",
+          "A0920"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "block_crosses_article_boundary",
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1763",
+        "sourceRow": 2199,
+        "label": "G2-5",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0932"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1764",
+        "sourceRow": 2201,
+        "label": "G2-5",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A0933"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1867",
+        "sourceRow": 2404,
+        "label": "G2-5",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A1011"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1868",
+        "sourceRow": 2406,
+        "label": "G2-5",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A1011"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1870",
+        "sourceRow": 2409,
+        "label": "G2-5",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A1013"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1873",
+        "sourceRow": 2415,
+        "label": "G2-5",
+        "strength": 5,
+        "blockRows": 5,
+        "articleIds": [
+          "A1016"
+        ],
+        "selfCitedStringCount": 5,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1874",
+        "sourceRow": 2420,
+        "label": "G2-5",
+        "strength": 4,
+        "blockRows": 4,
+        "articleIds": [
+          "A1016"
+        ],
+        "selfCitedStringCount": 4,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1875",
+        "sourceRow": 2424,
+        "label": "G2-5",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A1016"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1876",
+        "sourceRow": 2426,
+        "label": "G2-5",
+        "strength": 3,
+        "blockRows": 3,
+        "articleIds": [
+          "A1016"
+        ],
+        "selfCitedStringCount": 3,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      },
+      {
+        "strengthId": "S1883",
+        "sourceRow": 2435,
+        "label": "G2-5",
+        "strength": 2,
+        "blockRows": 2,
+        "articleIds": [
+          "A1021"
+        ],
+        "selfCitedStringCount": 2,
+        "flags": [
+          "multiple_self_cited_strings_within_block"
+        ]
+      }
+    ],
+    "perLabel": {
+      "G1-1": {
+        "journal": "Library Hi Tech",
+        "mentions": 529,
+        "articles": 125,
+        "strengthOccurrences": 414
+      },
+      "G1-2": {
+        "journal": "Activities, Adaptation & Aging",
+        "mentions": 147,
+        "articles": 49,
+        "strengthOccurrences": 119
+      },
+      "G1-3": {
+        "journal": "Engineering Technology & Applied Science Research",
+        "mentions": 1092,
+        "articles": 529,
+        "strengthOccurrences": 874
+      },
+      "G1-4": {
+        "journal": "Exploratory Animal and Medical Research",
+        "mentions": 98,
+        "articles": 53,
+        "strengthOccurrences": 95
+      },
+      "G1-5": {
+        "journal": "Regional Statistics",
+        "mentions": 81,
+        "articles": 38,
+        "strengthOccurrences": 80
+      },
+      "G2-1": {
+        "journal": "Information Management",
+        "mentions": 104,
+        "articles": 53,
+        "strengthOccurrences": 76
+      },
+      "G2-2": {
+        "journal": "Nature Aging",
+        "mentions": 61,
+        "articles": 33,
+        "strengthOccurrences": 35
+      },
+      "G2-3": {
+        "journal": "Engineering",
+        "mentions": 25,
+        "articles": 15,
+        "strengthOccurrences": 20
+      },
+      "G2-4": {
+        "journal": "Animal Nutrition",
+        "mentions": 52,
+        "articles": 32,
+        "strengthOccurrences": 42
+      },
+      "G2-5": {
+        "journal": "Landscape and Urban Planning",
+        "mentions": 246,
+        "articles": 94,
+        "strengthOccurrences": 128
+      }
+    }
+  },
+  "aggregate": {
+    "Citation position": {
+      "categories": [
+        "Introduction",
+        "Related work",
+        "Methods",
+        "Results",
+        "Discussion"
+      ],
+      "counts": [
+        [
+          1061,
+          249,
+          270,
+          93,
+          274
+        ],
+        [
+          180,
+          56,
+          112,
+          33,
+          107
+        ]
+      ],
+      "percentages": [
+        [
+          0.5449409347714432,
+          0.12788906009244994,
+          0.1386748844375963,
+          0.04776579352850539,
+          0.14072932717000514
+        ],
+        [
+          0.36885245901639346,
+          0.11475409836065574,
+          0.22950819672131148,
+          0.06762295081967214,
+          0.2192622950819672
+        ]
+      ],
+      "test": {
+        "countsKept": [
+          [
+            1061,
+            249,
+            270,
+            93,
+            274
+          ],
+          [
+            180,
+            56,
+            112,
+            33,
+            107
+          ]
+        ],
+        "statistic": 63.152535429702674,
+        "df": 4,
+        "p": 6.302349706375737e-13,
+        "n": 2435,
+        "cramersV": 0.16104450572850942,
+        "expectedLessThan5": 0,
+        "expectedCells": 10,
+        "minExpected": 25.251745379876798,
+        "monteCarlo": {
+          "p": 9.99990000099999e-06,
+          "iterations": 100000,
+          "extreme": 0,
+          "seed": 1800328975
+        }
+      }
+    },
+    "Citation distance": {
+      "categories": [
+        "Same sentence",
+        "Same paragraph",
+        "Same section",
+        "Same article",
+        "Single self-cited article"
+      ],
+      "counts": [
+        [
+          516,
+          281,
+          363,
+          331,
+          456
+        ],
+        [
+          35,
+          7,
+          92,
+          78,
+          276
+        ]
+      ],
+      "percentages": [
+        [
+          0.2650231124807396,
+          0.1443246019517206,
+          0.1864406779661017,
+          0.17000513610683102,
+          0.23420647149460708
+        ],
+        [
+          0.07172131147540983,
+          0.014344262295081968,
+          0.1885245901639344,
+          0.1598360655737705,
+          0.5655737704918032
+        ]
+      ],
+      "test": {
+        "countsKept": [
+          [
+            516,
+            281,
+            363,
+            331,
+            456
+          ],
+          [
+            35,
+            7,
+            92,
+            78,
+            276
+          ]
+        ],
+        "statistic": 262.94555457751386,
+        "df": 4,
+        "p": 1.0573650334064772e-55,
+        "n": 2435,
+        "cramersV": 0.32861201139937046,
+        "expectedLessThan5": 0,
+        "expectedCells": 10,
+        "minExpected": 57.718275154004104,
+        "monteCarlo": {
+          "p": 9.99990000099999e-06,
+          "iterations": 100000,
+          "extreme": 0,
+          "seed": 836565347
+        }
+      }
+    },
+    "Citation function": {
+      "categories": [
+        "Foundation",
+        "Inspiration",
+        "Extension",
+        "Application",
+        "Elaborated Citation",
+        "Comparison",
+        "Similarity",
+        "Affirmation",
+        "Related work",
+        "Simple mention",
+        "Comparison between Related Work",
+        "Future work",
+        "Further reading",
+        "Historical background"
+      ],
+      "counts": [
+        [
+          0,
+          16,
+          8,
+          270,
+          14,
+          56,
+          18,
+          42,
+          441,
+          509,
+          17,
+          51,
+          4,
+          501
+        ],
+        [
+          1,
+          14,
+          4,
+          101,
+          2,
+          30,
+          14,
+          24,
+          112,
+          128,
+          5,
+          22,
+          1,
+          30
+        ]
+      ],
+      "percentages": [
+        [
+          0.0,
+          0.008217770929635337,
+          0.004108885464817668,
+          0.1386748844375963,
+          0.007190549563430919,
+          0.028762198253723677,
+          0.009244992295839754,
+          0.02157164869029276,
+          0.22650231124807396,
+          0.2614278376990241,
+          0.008731381612737545,
+          0.026194144838212634,
+          0.002054442732408834,
+          0.2573189522342065
+        ],
+        [
+          0.0020491803278688526,
+          0.028688524590163935,
+          0.00819672131147541,
+          0.2069672131147541,
+          0.004098360655737705,
+          0.06147540983606557,
+          0.028688524590163935,
+          0.04918032786885246,
+          0.22950819672131148,
+          0.26229508196721313,
+          0.010245901639344262,
+          0.045081967213114756,
+          0.0020491803278688526,
+          0.06147540983606557
+        ]
+      ],
+      "test": {
+        "countsKept": [
+          [
+            0,
+            16,
+            8,
+            270,
+            14,
+            56,
+            18,
+            42,
+            441,
+            509,
+            17,
+            51,
+            4,
+            501
+          ],
+          [
+            1,
+            14,
+            4,
+            101,
+            2,
+            30,
+            14,
+            24,
+            112,
+            128,
+            5,
+            22,
+            1,
+            30
+          ]
+        ],
+        "statistic": 138.50638546879594,
+        "df": 13,
+        "p": 4.1907288146761823e-23,
+        "n": 2435,
+        "cramersV": 0.23849836995624263,
+        "expectedLessThan5": 7,
+        "expectedCells": 28,
+        "minExpected": 0.20041067761806983,
+        "monteCarlo": {
+          "p": 9.99990000099999e-06,
+          "iterations": 100000,
+          "extreme": 0,
+          "seed": 3889202375
+        }
+      }
+    },
+    "Citation depth": {
+      "categories": [
+        "Deep citation",
+        "Moderate citation",
+        "Shallow citation"
+      ],
+      "counts": [
+        [
+          95,
+          376,
+          1476
+        ],
+        [
+          38,
+          190,
+          260
+        ]
+      ],
+      "percentages": [
+        [
+          0.04879301489470981,
+          0.19311761684643042,
+          0.7580893682588598
+        ],
+        [
+          0.0778688524590164,
+          0.38934426229508196,
+          0.5327868852459017
+        ]
+      ],
+      "test": {
+        "countsKept": [
+          [
+            95,
+            376,
+            1476
+          ],
+          [
+            38,
+            190,
+            260
+          ]
+        ],
+        "statistic": 98.45936652649311,
+        "df": 2,
+        "p": 4.1669684566883193e-22,
+        "n": 2435,
+        "cramersV": 0.20108470384831137,
+        "expectedLessThan5": 0,
+        "expectedCells": 6,
+        "minExpected": 26.654620123203287,
+        "monteCarlo": {
+          "p": 9.99990000099999e-06,
+          "iterations": 100000,
+          "extreme": 0,
+          "seed": 2320238540
+        }
+      }
+    },
+    "Citation strength": {
+      "categories": [
+        "1",
+        "2",
+        "3",
+        "4",
+        ">=5"
+      ],
+      "counts": [
+        [
+          1359,
+          163,
+          25,
+          17,
+          18
+        ],
+        [
+          219,
+          44,
+          12,
+          13,
+          13
+        ]
+      ],
+      "percentages": [
+        [
+          0.859039190897598,
+          0.10303413400758533,
+          0.01580278128950695,
+          0.010745891276864728,
+          0.011378002528445006
+        ],
+        [
+          0.7275747508305648,
+          0.1461794019933555,
+          0.03986710963455149,
+          0.04318936877076412,
+          0.04318936877076412
+        ]
+      ],
+      "test": {
+        "countsKept": [
+          [
+            1359,
+            163,
+            25,
+            17,
+            18
+          ],
+          [
+            219,
+            44,
+            12,
+            13,
+            13
+          ]
+        ],
+        "statistic": 49.202126429285386,
+        "df": 4,
+        "p": 5.298488534641688e-10,
+        "n": 1883,
+        "cramersV": 0.16164667518756962,
+        "expectedLessThan5": 2,
+        "expectedCells": 10,
+        "minExpected": 4.795539033457249,
+        "monteCarlo": {
+          "p": 9.99990000099999e-06,
+          "iterations": 100000,
+          "extreme": 0,
+          "seed": 4223783466
+        }
+      }
+    },
+    "Semantic similarity": {
+      "u1": 361371.5,
+      "u2": 588764.5,
+      "z": -8.187439554743579,
+      "p": 2.668421709183629e-16,
+      "n": 2435,
+      "n1": 1947,
+      "n2": 488,
+      "mean1": 0.6631021550248245,
+      "sd1": 0.05757864051515215,
+      "mean2": 0.6865928107923498,
+      "sd2": 0.052148100276262925,
+      "rankBiserial": 0.23932679111200927
+    }
+  },
+  "discipline": {
+    "1": {
+      "fieldName": "Information Science & Library Science",
+      "dimensions": {
+        "Citation position": {
+          "categories": [
+            "Introduction",
+            "Related work",
+            "Methods",
+            "Results",
+            "Discussion"
+          ],
+          "counts": [
+            [
+              160,
+              128,
+              53,
+              59,
+              129
+            ],
+            [
+              33,
+              27,
+              26,
+              6,
+              12
+            ]
+          ],
+          "percentages": [
+            [
+              0.30245746691871456,
+              0.24196597353497165,
+              0.1001890359168242,
+              0.11153119092627599,
+              0.2438563327032136
+            ],
+            [
+              0.3173076923076923,
+              0.25961538461538464,
+              0.25,
+              0.057692307692307696,
+              0.11538461538461539
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                160,
+                128,
+                53,
+                59,
+                129
+              ],
+              [
+                33,
+                27,
+                26,
+                6,
+                12
+              ]
+            ],
+            "statistic": 24.696456553767938,
+            "df": 4,
+            "p": 5.789702165419193e-05,
+            "n": 633,
+            "cramersV": 0.1975219969103605,
+            "expectedLessThan5": 0,
+            "expectedCells": 10,
+            "minExpected": 10.679304897314376,
+            "monteCarlo": {
+              "p": 7.999840003199936e-05,
+              "iterations": 50000,
+              "extreme": 3,
+              "seed": 3206748830
+            }
+          }
+        },
+        "Citation distance": {
+          "categories": [
+            "Same sentence",
+            "Same paragraph",
+            "Same section",
+            "Same article",
+            "Single self-cited article"
+          ],
+          "counts": [
+            [
+              173,
+              76,
+              127,
+              114,
+              39
+            ],
+            [
+              10,
+              1,
+              20,
+              27,
+              46
+            ]
+          ],
+          "percentages": [
+            [
+              0.3270321361058601,
+              0.14366729678638943,
+              0.24007561436672967,
+              0.21550094517958412,
+              0.07372400756143667
+            ],
+            [
+              0.09615384615384616,
+              0.009615384615384616,
+              0.19230769230769232,
+              0.25961538461538464,
+              0.4423076923076923
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                173,
+                76,
+                127,
+                114,
+                39
+              ],
+              [
+                10,
+                1,
+                20,
+                27,
+                46
+              ]
+            ],
+            "statistic": 118.40897527799874,
+            "df": 4,
+            "p": 1.1680100489153675e-24,
+            "n": 633,
+            "cramersV": 0.4325043266145234,
+            "expectedLessThan5": 0,
+            "expectedCells": 10,
+            "minExpected": 12.65086887835703,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 3901273298
+            }
+          }
+        },
+        "Citation function": {
+          "categories": [
+            "Foundation",
+            "Inspiration",
+            "Extension",
+            "Application",
+            "Elaborated Citation",
+            "Comparison",
+            "Similarity",
+            "Affirmation",
+            "Related work",
+            "Simple mention",
+            "Comparison between Related Work",
+            "Future work",
+            "Further reading",
+            "Historical background"
+          ],
+          "counts": [
+            [
+              0,
+              9,
+              3,
+              37,
+              6,
+              11,
+              5,
+              1,
+              131,
+              224,
+              6,
+              31,
+              0,
+              65
+            ],
+            [
+              1,
+              9,
+              1,
+              14,
+              1,
+              5,
+              0,
+              0,
+              18,
+              50,
+              0,
+              2,
+              0,
+              3
+            ]
+          ],
+          "percentages": [
+            [
+              0.0,
+              0.017013232514177693,
+              0.005671077504725898,
+              0.06994328922495274,
+              0.011342155009451797,
+              0.020793950850661626,
+              0.00945179584120983,
+              0.001890359168241966,
+              0.24763705103969755,
+              0.42344045368620037,
+              0.011342155009451797,
+              0.05860113421550094,
+              0.0,
+              0.12287334593572778
+            ],
+            [
+              0.009615384615384616,
+              0.08653846153846154,
+              0.009615384615384616,
+              0.1346153846153846,
+              0.009615384615384616,
+              0.04807692307692308,
+              0.0,
+              0.0,
+              0.17307692307692307,
+              0.4807692307692308,
+              0.0,
+              0.019230769230769232,
+              0.0,
+              0.028846153846153848
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                0,
+                9,
+                3,
+                37,
+                6,
+                11,
+                5,
+                1,
+                131,
+                224,
+                6,
+                31,
+                65
+              ],
+              [
+                1,
+                9,
+                1,
+                14,
+                1,
+                5,
+                0,
+                0,
+                18,
+                50,
+                0,
+                2,
+                3
+              ]
+            ],
+            "statistic": 41.978216732948155,
+            "df": 12,
+            "p": 3.3587542852461674e-05,
+            "n": 633,
+            "cramersV": 0.25751951024401276,
+            "expectedLessThan5": 12,
+            "expectedCells": 26,
+            "minExpected": 0.16429699842022116,
+            "monteCarlo": {
+              "p": 0.00011999760004799904,
+              "iterations": 50000,
+              "extreme": 5,
+              "seed": 849619286
+            }
+          }
+        },
+        "Citation depth": {
+          "categories": [
+            "Deep citation",
+            "Moderate citation",
+            "Shallow citation"
+          ],
+          "counts": [
+            [
+              10,
+              89,
+              430
+            ],
+            [
+              14,
+              47,
+              43
+            ]
+          ],
+          "percentages": [
+            [
+              0.01890359168241966,
+              0.16824196597353497,
+              0.8128544423440454
+            ],
+            [
+              0.1346153846153846,
+              0.4519230769230769,
+              0.41346153846153844
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                10,
+                89,
+                430
+              ],
+              [
+                14,
+                47,
+                43
+              ]
+            ],
+            "statistic": 81.8006622550834,
+            "df": 2,
+            "p": 1.726680098023515e-18,
+            "n": 633,
+            "cramersV": 0.3594815079936508,
+            "expectedLessThan5": 1,
+            "expectedCells": 6,
+            "minExpected": 3.943127962085308,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 3537417267
+            }
+          }
+        },
+        "Citation strength": {
+          "categories": [
+            "1",
+            "2",
+            "3",
+            "4",
+            ">=5"
+          ],
+          "counts": [
+            [
+              333,
+              62,
+              11,
+              6,
+              2
+            ],
+            [
+              60,
+              11,
+              1,
+              2,
+              2
+            ]
+          ],
+          "percentages": [
+            [
+              0.8043478260869565,
+              0.1497584541062802,
+              0.026570048309178744,
+              0.014492753623188406,
+              0.004830917874396135
+            ],
+            [
+              0.7894736842105263,
+              0.14473684210526316,
+              0.013157894736842105,
+              0.02631578947368421,
+              0.02631578947368421
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                333,
+                62,
+                11,
+                6,
+                2
+              ],
+              [
+                60,
+                11,
+                1,
+                2,
+                2
+              ]
+            ],
+            "statistic": 4.680956614326606,
+            "df": 4,
+            "p": 0.32162651282788257,
+            "n": 490,
+            "cramersV": 0.09773930981083914,
+            "expectedLessThan5": 4,
+            "expectedCells": 10,
+            "minExpected": 0.6204081632653061,
+            "monteCarlo": {
+              "p": 0.30311393772124556,
+              "iterations": 50000,
+              "extreme": 15155,
+              "seed": 783162747
+            }
+          }
+        },
+        "Semantic similarity": {
+          "u1": 15310.5,
+          "u2": 39705.5,
+          "z": -7.155215689481758,
+          "p": 8.354146259919254e-13,
+          "n": 633,
+          "n1": 529,
+          "n2": 104,
+          "mean1": 0.6344173361688721,
+          "sd1": 0.04848894456071619,
+          "mean2": 0.6729767628205129,
+          "sd2": 0.04306184033855121,
+          "rankBiserial": 0.44341646066598805
+        }
+      }
+    },
+    "2": {
+      "fieldName": "Gerontology",
+      "dimensions": {
+        "Citation position": {
+          "categories": [
+            "Introduction",
+            "Related work",
+            "Methods",
+            "Results",
+            "Discussion"
+          ],
+          "counts": [
+            [
+              62,
+              22,
+              2,
+              0,
+              61
+            ],
+            [
+              11,
+              1,
+              15,
+              11,
+              23
+            ]
+          ],
+          "percentages": [
+            [
+              0.4217687074829932,
+              0.14965986394557823,
+              0.013605442176870748,
+              0.0,
+              0.41496598639455784
+            ],
+            [
+              0.18032786885245902,
+              0.01639344262295082,
+              0.2459016393442623,
+              0.18032786885245902,
+              0.3770491803278688
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                62,
+                22,
+                2,
+                0,
+                61
+              ],
+              [
+                11,
+                1,
+                15,
+                11,
+                23
+              ]
+            ],
+            "statistic": 69.20938555862264,
+            "df": 4,
+            "p": 3.333343890328381e-14,
+            "n": 208,
+            "cramersV": 0.576833971407979,
+            "expectedLessThan5": 2,
+            "expectedCells": 10,
+            "minExpected": 3.2259615384615383,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 535862519
+            }
+          }
+        },
+        "Citation distance": {
+          "categories": [
+            "Same sentence",
+            "Same paragraph",
+            "Same section",
+            "Same article",
+            "Single self-cited article"
+          ],
+          "counts": [
+            [
+              46,
+              26,
+              35,
+              18,
+              22
+            ],
+            [
+              0,
+              0,
+              0,
+              4,
+              57
+            ]
+          ],
+          "percentages": [
+            [
+              0.3129251700680272,
+              0.17687074829931973,
+              0.23809523809523808,
+              0.12244897959183673,
+              0.14965986394557823
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.06557377049180328,
+              0.9344262295081968
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                46,
+                26,
+                35,
+                18,
+                22
+              ],
+              [
+                0,
+                0,
+                0,
+                4,
+                57
+              ]
+            ],
+            "statistic": 115.62364034447751,
+            "df": 4,
+            "p": 4.593144738339526e-24,
+            "n": 208,
+            "cramersV": 0.7455755402851723,
+            "expectedLessThan5": 0,
+            "expectedCells": 10,
+            "minExpected": 6.451923076923077,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 1161442155
+            }
+          }
+        },
+        "Citation function": {
+          "categories": [
+            "Foundation",
+            "Inspiration",
+            "Extension",
+            "Application",
+            "Elaborated Citation",
+            "Comparison",
+            "Similarity",
+            "Affirmation",
+            "Related work",
+            "Simple mention",
+            "Comparison between Related Work",
+            "Future work",
+            "Further reading",
+            "Historical background"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              1,
+              17,
+              2,
+              6,
+              7,
+              25,
+              35,
+              33,
+              1,
+              10,
+              1,
+              9
+            ],
+            [
+              0,
+              1,
+              0,
+              10,
+              1,
+              3,
+              10,
+              5,
+              11,
+              20,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "percentages": [
+            [
+              0.0,
+              0.0,
+              0.006802721088435374,
+              0.11564625850340136,
+              0.013605442176870748,
+              0.04081632653061224,
+              0.047619047619047616,
+              0.17006802721088435,
+              0.23809523809523808,
+              0.22448979591836735,
+              0.006802721088435374,
+              0.06802721088435375,
+              0.006802721088435374,
+              0.061224489795918366
+            ],
+            [
+              0.0,
+              0.01639344262295082,
+              0.0,
+              0.16393442622950818,
+              0.01639344262295082,
+              0.04918032786885246,
+              0.16393442622950818,
+              0.08196721311475409,
+              0.18032786885245902,
+              0.32786885245901637,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                0,
+                1,
+                17,
+                2,
+                6,
+                7,
+                25,
+                35,
+                33,
+                1,
+                10,
+                1,
+                9
+              ],
+              [
+                1,
+                0,
+                10,
+                1,
+                3,
+                10,
+                5,
+                11,
+                20,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "statistic": 24.321367960580602,
+            "df": 12,
+            "p": 0.018387112530290226,
+            "n": 208,
+            "cramersV": 0.34194978236085705,
+            "expectedLessThan5": 14,
+            "expectedCells": 26,
+            "minExpected": 0.2932692307692308,
+            "monteCarlo": {
+              "p": 0.009839803203935921,
+              "iterations": 50000,
+              "extreme": 491,
+              "seed": 2473504447
+            }
+          }
+        },
+        "Citation depth": {
+          "categories": [
+            "Deep citation",
+            "Moderate citation",
+            "Shallow citation"
+          ],
+          "counts": [
+            [
+              1,
+              60,
+              86
+            ],
+            [
+              1,
+              21,
+              39
+            ]
+          ],
+          "percentages": [
+            [
+              0.006802721088435374,
+              0.40816326530612246,
+              0.5850340136054422
+            ],
+            [
+              0.01639344262295082,
+              0.3442622950819672,
+              0.639344262295082
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                1,
+                60,
+                86
+              ],
+              [
+                1,
+                21,
+                39
+              ]
+            ],
+            "statistic": 1.0760339516498774,
+            "df": 2,
+            "p": 0.5839050027993851,
+            "n": 208,
+            "cramersV": 0.0719252400215868,
+            "expectedLessThan5": 2,
+            "expectedCells": 6,
+            "minExpected": 0.5865384615384616,
+            "monteCarlo": {
+              "p": 0.5854082918341633,
+              "iterations": 50000,
+              "extreme": 29270,
+              "seed": 4188037061
+            }
+          }
+        },
+        "Citation strength": {
+          "categories": [
+            "1",
+            "2",
+            "3",
+            "4",
+            ">=5"
+          ],
+          "counts": [
+            [
+              96,
+              19,
+              3,
+              1,
+              0
+            ],
+            [
+              22,
+              8,
+              2,
+              1,
+              2
+            ]
+          ],
+          "percentages": [
+            [
+              0.8067226890756303,
+              0.15966386554621848,
+              0.025210084033613446,
+              0.008403361344537815,
+              0.0
+            ],
+            [
+              0.6285714285714286,
+              0.22857142857142856,
+              0.05714285714285714,
+              0.02857142857142857,
+              0.05714285714285714
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                96,
+                19,
+                3,
+                1,
+                0
+              ],
+              [
+                22,
+                8,
+                2,
+                1,
+                2
+              ]
+            ],
+            "statistic": 10.349171744027174,
+            "df": 4,
+            "p": 0.034939263377065204,
+            "n": 154,
+            "cramersV": 0.25923428384813296,
+            "expectedLessThan5": 6,
+            "expectedCells": 10,
+            "minExpected": 0.45454545454545453,
+            "monteCarlo": {
+              "p": 0.03635927281454371,
+              "iterations": 50000,
+              "extreme": 1817,
+              "seed": 2405668898
+            }
+          }
+        },
+        "Semantic similarity": {
+          "u1": 3365.0,
+          "u2": 5602.0,
+          "z": -2.8296538131925346,
+          "p": 0.004659839511257617,
+          "n": 208,
+          "n1": 147,
+          "n2": 61,
+          "mean1": 0.6693948412698412,
+          "sd1": 0.04674931357122824,
+          "mean2": 0.6921533469945355,
+          "sd2": 0.056577210977380075,
+          "rankBiserial": 0.24947027991524484
+        }
+      }
+    },
+    "3": {
+      "fieldName": "Engineering, Multidisciplinary",
+      "dimensions": {
+        "Citation position": {
+          "categories": [
+            "Introduction",
+            "Related work",
+            "Methods",
+            "Results",
+            "Discussion"
+          ],
+          "counts": [
+            [
+              715,
+              78,
+              195,
+              25,
+              79
+            ],
+            [
+              16,
+              1,
+              1,
+              5,
+              2
+            ]
+          ],
+          "percentages": [
+            [
+              0.6547619047619048,
+              0.07142857142857142,
+              0.17857142857142858,
+              0.022893772893772892,
+              0.07234432234432235
+            ],
+            [
+              0.64,
+              0.04,
+              0.04,
+              0.2,
+              0.08
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                715,
+                78,
+                195,
+                25,
+                79
+              ],
+              [
+                16,
+                1,
+                1,
+                5,
+                2
+              ]
+            ],
+            "statistic": 31.587420165660546,
+            "df": 4,
+            "p": 2.3228732555096596e-06,
+            "n": 1117,
+            "cramersV": 0.16816301765373537,
+            "expectedLessThan5": 4,
+            "expectedCells": 10,
+            "minExpected": 0.6714413607878246,
+            "monteCarlo": {
+              "p": 0.0002799944001119978,
+              "iterations": 50000,
+              "extreme": 13,
+              "seed": 3398376783
+            }
+          }
+        },
+        "Citation distance": {
+          "categories": [
+            "Same sentence",
+            "Same paragraph",
+            "Same section",
+            "Same article",
+            "Single self-cited article"
+          ],
+          "counts": [
+            [
+              214,
+              155,
+              181,
+              186,
+              356
+            ],
+            [
+              0,
+              0,
+              11,
+              3,
+              11
+            ]
+          ],
+          "percentages": [
+            [
+              0.19597069597069597,
+              0.14194139194139194,
+              0.16575091575091574,
+              0.17032967032967034,
+              0.326007326007326
+            ],
+            [
+              0.0,
+              0.0,
+              0.44,
+              0.12,
+              0.44
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                214,
+                155,
+                181,
+                186,
+                356
+              ],
+              [
+                0,
+                0,
+                11,
+                3,
+                11
+              ]
+            ],
+            "statistic": 20.47458499570879,
+            "df": 4,
+            "p": 0.00040240377283944784,
+            "n": 1117,
+            "cramersV": 0.13538824769816463,
+            "expectedLessThan5": 4,
+            "expectedCells": 10,
+            "minExpected": 3.46911369740376,
+            "monteCarlo": {
+              "p": 0.000499990000199996,
+              "iterations": 50000,
+              "extreme": 24,
+              "seed": 2501686051
+            }
+          }
+        },
+        "Citation function": {
+          "categories": [
+            "Foundation",
+            "Inspiration",
+            "Extension",
+            "Application",
+            "Elaborated Citation",
+            "Comparison",
+            "Similarity",
+            "Affirmation",
+            "Related work",
+            "Simple mention",
+            "Comparison between Related Work",
+            "Future work",
+            "Further reading",
+            "Historical background"
+          ],
+          "counts": [
+            [
+              0,
+              5,
+              4,
+              200,
+              5,
+              38,
+              4,
+              13,
+              260,
+              210,
+              10,
+              7,
+              2,
+              334
+            ],
+            [
+              0,
+              0,
+              1,
+              5,
+              0,
+              1,
+              0,
+              1,
+              3,
+              3,
+              0,
+              0,
+              0,
+              11
+            ]
+          ],
+          "percentages": [
+            [
+              0.0,
+              0.004578754578754579,
+              0.003663003663003663,
+              0.18315018315018314,
+              0.004578754578754579,
+              0.0347985347985348,
+              0.003663003663003663,
+              0.011904761904761904,
+              0.23809523809523808,
+              0.19230769230769232,
+              0.009157509157509158,
+              0.00641025641025641,
+              0.0018315018315018315,
+              0.3058608058608059
+            ],
+            [
+              0.0,
+              0.0,
+              0.04,
+              0.2,
+              0.0,
+              0.04,
+              0.0,
+              0.04,
+              0.12,
+              0.12,
+              0.0,
+              0.0,
+              0.0,
+              0.44
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                5,
+                4,
+                200,
+                5,
+                38,
+                4,
+                13,
+                260,
+                210,
+                10,
+                7,
+                2,
+                334
+              ],
+              [
+                0,
+                1,
+                5,
+                0,
+                1,
+                0,
+                1,
+                3,
+                3,
+                0,
+                0,
+                0,
+                11
+              ]
+            ],
+            "statistic": 13.102335947035312,
+            "df": 12,
+            "p": 0.361646575393061,
+            "n": 1117,
+            "cramersV": 0.10830481846945758,
+            "expectedLessThan5": 16,
+            "expectedCells": 26,
+            "minExpected": 0.044762757385854966,
+            "monteCarlo": {
+              "p": 0.33085338293234134,
+              "iterations": 50000,
+              "extreme": 16542,
+              "seed": 1192242823
+            }
+          }
+        },
+        "Citation depth": {
+          "categories": [
+            "Deep citation",
+            "Moderate citation",
+            "Shallow citation"
+          ],
+          "counts": [
+            [
+              81,
+              205,
+              806
+            ],
+            [
+              5,
+              3,
+              17
+            ]
+          ],
+          "percentages": [
+            [
+              0.07417582417582418,
+              0.18772893772893773,
+              0.7380952380952381
+            ],
+            [
+              0.2,
+              0.12,
+              0.68
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                81,
+                205,
+                806
+              ],
+              [
+                5,
+                3,
+                17
+              ]
+            ],
+            "statistic": 5.739677956318257,
+            "df": 2,
+            "p": 0.05670805708046558,
+            "n": 1117,
+            "cramersV": 0.07168316564321277,
+            "expectedLessThan5": 2,
+            "expectedCells": 6,
+            "minExpected": 1.9247985675917636,
+            "monteCarlo": {
+              "p": 0.05421891562168757,
+              "iterations": 50000,
+              "extreme": 2710,
+              "seed": 1463341396
+            }
+          }
+        },
+        "Citation strength": {
+          "categories": [
+            "1",
+            "2",
+            "3",
+            "4",
+            ">=5"
+          ],
+          "counts": [
+            [
+              758,
+              80,
+              10,
+              10,
+              16
+            ],
+            [
+              17,
+              2,
+              0,
+              1,
+              0
+            ]
+          ],
+          "percentages": [
+            [
+              0.8672768878718535,
+              0.09153318077803203,
+              0.011441647597254004,
+              0.011441647597254004,
+              0.018306636155606407
+            ],
+            [
+              0.85,
+              0.1,
+              0.0,
+              0.05,
+              0.0
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                758,
+                80,
+                10,
+                10,
+                16
+              ],
+              [
+                17,
+                2,
+                0,
+                1,
+                0
+              ]
+            ],
+            "statistic": 2.979555075153482,
+            "df": 4,
+            "p": 0.561252619076781,
+            "n": 894,
+            "cramersV": 0.05773071673324433,
+            "expectedLessThan5": 4,
+            "expectedCells": 10,
+            "minExpected": 0.22371364653243847,
+            "monteCarlo": {
+              "p": 0.5524489510209796,
+              "iterations": 50000,
+              "extreme": 27622,
+              "seed": 1526863978
+            }
+          }
+        },
+        "Semantic similarity": {
+          "u1": 11725.0,
+          "u2": 15575.0,
+          "z": -1.2068568447589543,
+          "p": 0.2274872798246472,
+          "n": 1117,
+          "n1": 1092,
+          "n2": 25,
+          "mean1": 0.6790889232295483,
+          "sd1": 0.05679034534145585,
+          "mean2": 0.6926041666666667,
+          "sd2": 0.04189310217146268,
+          "rankBiserial": 0.14102564102564108
+        }
+      }
+    },
+    "4": {
+      "fieldName": "Veterinary Sciences",
+      "dimensions": {
+        "Citation position": {
+          "categories": [
+            "Introduction",
+            "Related work",
+            "Methods",
+            "Results",
+            "Discussion"
+          ],
+          "counts": [
+            [
+              91,
+              0,
+              1,
+              6,
+              0
+            ],
+            [
+              17,
+              0,
+              8,
+              1,
+              26
+            ]
+          ],
+          "percentages": [
+            [
+              0.9285714285714286,
+              0.0,
+              0.01020408163265306,
+              0.061224489795918366,
+              0.0
+            ],
+            [
+              0.3269230769230769,
+              0.0,
+              0.15384615384615385,
+              0.019230769230769232,
+              0.5
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                91,
+                1,
+                6,
+                0
+              ],
+              [
+                17,
+                8,
+                1,
+                26
+              ]
+            ],
+            "statistic": 79.04682477386558,
+            "df": 3,
+            "p": 4.914460651130353e-17,
+            "n": 150,
+            "cramersV": 0.7259330766852896,
+            "expectedLessThan5": 3,
+            "expectedCells": 8,
+            "minExpected": 2.4266666666666667,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 2224858632
+            }
+          }
+        },
+        "Citation distance": {
+          "categories": [
+            "Same sentence",
+            "Same paragraph",
+            "Same section",
+            "Same article",
+            "Single self-cited article"
+          ],
+          "counts": [
+            [
+              55,
+              15,
+              0,
+              3,
+              25
+            ],
+            [
+              0,
+              2,
+              13,
+              6,
+              31
+            ]
+          ],
+          "percentages": [
+            [
+              0.5612244897959183,
+              0.15306122448979592,
+              0.0,
+              0.030612244897959183,
+              0.25510204081632654
+            ],
+            [
+              0.0,
+              0.038461538461538464,
+              0.25,
+              0.11538461538461539,
+              0.5961538461538461
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                55,
+                15,
+                0,
+                3,
+                25
+              ],
+              [
+                0,
+                2,
+                13,
+                6,
+                31
+              ]
+            ],
+            "statistic": 72.2743699128003,
+            "df": 4,
+            "p": 7.509810227105706e-15,
+            "n": 150,
+            "cramersV": 0.6941391306877909,
+            "expectedLessThan5": 2,
+            "expectedCells": 10,
+            "minExpected": 3.12,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 3675138140
+            }
+          }
+        },
+        "Citation function": {
+          "categories": [
+            "Foundation",
+            "Inspiration",
+            "Extension",
+            "Application",
+            "Elaborated Citation",
+            "Comparison",
+            "Similarity",
+            "Affirmation",
+            "Related work",
+            "Simple mention",
+            "Comparison between Related Work",
+            "Future work",
+            "Further reading",
+            "Historical background"
+          ],
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              2,
+              16,
+              0,
+              0,
+              0,
+              75
+            ],
+            [
+              0,
+              1,
+              1,
+              8,
+              0,
+              3,
+              1,
+              6,
+              5,
+              18,
+              0,
+              2,
+              0,
+              7
+            ]
+          ],
+          "percentages": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.05102040816326531,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.02040816326530612,
+              0.16326530612244897,
+              0.0,
+              0.0,
+              0.0,
+              0.7653061224489796
+            ],
+            [
+              0.0,
+              0.019230769230769232,
+              0.019230769230769232,
+              0.15384615384615385,
+              0.0,
+              0.057692307692307696,
+              0.019230769230769232,
+              0.11538461538461539,
+              0.09615384615384616,
+              0.34615384615384615,
+              0.0,
+              0.038461538461538464,
+              0.0,
+              0.1346153846153846
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                2,
+                16,
+                0,
+                75
+              ],
+              [
+                1,
+                1,
+                8,
+                3,
+                1,
+                6,
+                5,
+                18,
+                2,
+                7
+              ]
+            ],
+            "statistic": 64.43941528325657,
+            "df": 9,
+            "p": 1.854260141331918e-10,
+            "n": 150,
+            "cramersV": 0.6554358106545424,
+            "expectedLessThan5": 15,
+            "expectedCells": 20,
+            "minExpected": 0.3466666666666667,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 286962640
+            }
+          }
+        },
+        "Citation depth": {
+          "categories": [
+            "Deep citation",
+            "Moderate citation",
+            "Shallow citation"
+          ],
+          "counts": [
+            [
+              0,
+              5,
+              93
+            ],
+            [
+              1,
+              21,
+              30
+            ]
+          ],
+          "percentages": [
+            [
+              0.0,
+              0.05102040816326531,
+              0.9489795918367347
+            ],
+            [
+              0.019230769230769232,
+              0.40384615384615385,
+              0.5769230769230769
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                0,
+                5,
+                93
+              ],
+              [
+                1,
+                21,
+                30
+              ]
+            ],
+            "statistic": 32.018987779842774,
+            "df": 2,
+            "p": 1.1147183376608378e-07,
+            "n": 150,
+            "cramersV": 0.46201722752759466,
+            "expectedLessThan5": 2,
+            "expectedCells": 6,
+            "minExpected": 0.3466666666666667,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 2905569569
+            }
+          }
+        },
+        "Citation strength": {
+          "categories": [
+            "1",
+            "2",
+            "3",
+            "4",
+            ">=5"
+          ],
+          "counts": [
+            [
+              93,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              37,
+              2,
+              1,
+              2,
+              0
+            ]
+          ],
+          "percentages": [
+            [
+              0.9789473684210527,
+              0.010526315789473684,
+              0.010526315789473684,
+              0.0,
+              0.0
+            ],
+            [
+              0.8809523809523809,
+              0.047619047619047616,
+              0.023809523809523808,
+              0.047619047619047616,
+              0.0
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                93,
+                1,
+                1,
+                0
+              ],
+              [
+                37,
+                2,
+                1,
+                2
+              ]
+            ],
+            "statistic": 7.0004614099350935,
+            "df": 3,
+            "p": 0.07188306724684572,
+            "n": 137,
+            "cramersV": 0.22604923903140997,
+            "expectedLessThan5": 6,
+            "expectedCells": 8,
+            "minExpected": 0.6131386861313869,
+            "monteCarlo": {
+              "p": 0.06551868962620748,
+              "iterations": 50000,
+              "extreme": 3275,
+              "seed": 354919221
+            }
+          }
+        },
+        "Semantic similarity": {
+          "u1": 986.0,
+          "u2": 4110.0,
+          "z": -6.1675137888322995,
+          "p": 6.937206515224182e-10,
+          "n": 150,
+          "n1": 98,
+          "n2": 52,
+          "mean1": 0.6326530612244897,
+          "sd1": 0.05290219729237738,
+          "mean2": 0.7026241987179487,
+          "sd2": 0.061079737141230994,
+          "rankBiserial": 0.6130298273155417
+        }
+      }
+    },
+    "5": {
+      "fieldName": "Geography",
+      "dimensions": {
+        "Citation position": {
+          "categories": [
+            "Introduction",
+            "Related work",
+            "Methods",
+            "Results",
+            "Discussion"
+          ],
+          "counts": [
+            [
+              33,
+              21,
+              19,
+              3,
+              5
+            ],
+            [
+              103,
+              27,
+              62,
+              10,
+              44
+            ]
+          ],
+          "percentages": [
+            [
+              0.4074074074074074,
+              0.25925925925925924,
+              0.2345679012345679,
+              0.037037037037037035,
+              0.06172839506172839
+            ],
+            [
+              0.4186991869918699,
+              0.10975609756097561,
+              0.25203252032520324,
+              0.04065040650406504,
+              0.17886178861788618
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                33,
+                21,
+                19,
+                3,
+                5
+              ],
+              [
+                103,
+                27,
+                62,
+                10,
+                44
+              ]
+            ],
+            "statistic": 14.971641209165771,
+            "df": 4,
+            "p": 0.0047603980123787,
+            "n": 327,
+            "cramersV": 0.21397391313437253,
+            "expectedLessThan5": 1,
+            "expectedCells": 10,
+            "minExpected": 3.220183486238532,
+            "monteCarlo": {
+              "p": 0.004799904001919961,
+              "iterations": 50000,
+              "extreme": 239,
+              "seed": 1438328384
+            }
+          }
+        },
+        "Citation distance": {
+          "categories": [
+            "Same sentence",
+            "Same paragraph",
+            "Same section",
+            "Same article",
+            "Single self-cited article"
+          ],
+          "counts": [
+            [
+              28,
+              9,
+              20,
+              10,
+              14
+            ],
+            [
+              25,
+              4,
+              48,
+              38,
+              131
+            ]
+          ],
+          "percentages": [
+            [
+              0.345679012345679,
+              0.1111111111111111,
+              0.24691358024691357,
+              0.12345679012345678,
+              0.1728395061728395
+            ],
+            [
+              0.1016260162601626,
+              0.016260162601626018,
+              0.1951219512195122,
+              0.15447154471544716,
+              0.532520325203252
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                28,
+                9,
+                20,
+                10,
+                14
+              ],
+              [
+                25,
+                4,
+                48,
+                38,
+                131
+              ]
+            ],
+            "statistic": 55.14636604175723,
+            "df": 4,
+            "p": 3.027452852955198e-11,
+            "n": 327,
+            "cramersV": 0.41066205233575626,
+            "expectedLessThan5": 1,
+            "expectedCells": 10,
+            "minExpected": 3.220183486238532,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 259041332
+            }
+          }
+        },
+        "Citation function": {
+          "categories": [
+            "Foundation",
+            "Inspiration",
+            "Extension",
+            "Application",
+            "Elaborated Citation",
+            "Comparison",
+            "Similarity",
+            "Affirmation",
+            "Related work",
+            "Simple mention",
+            "Comparison between Related Work",
+            "Future work",
+            "Further reading",
+            "Historical background"
+          ],
+          "counts": [
+            [
+              0,
+              2,
+              0,
+              11,
+              1,
+              1,
+              2,
+              3,
+              13,
+              26,
+              0,
+              3,
+              1,
+              18
+            ],
+            [
+              0,
+              3,
+              1,
+              64,
+              0,
+              18,
+              3,
+              12,
+              75,
+              37,
+              5,
+              18,
+              1,
+              9
+            ]
+          ],
+          "percentages": [
+            [
+              0.0,
+              0.024691358024691357,
+              0.0,
+              0.13580246913580246,
+              0.012345679012345678,
+              0.012345679012345678,
+              0.024691358024691357,
+              0.037037037037037035,
+              0.16049382716049382,
+              0.32098765432098764,
+              0.0,
+              0.037037037037037035,
+              0.012345679012345678,
+              0.2222222222222222
+            ],
+            [
+              0.0,
+              0.012195121951219513,
+              0.0040650406504065045,
+              0.2601626016260163,
+              0.0,
+              0.07317073170731707,
+              0.012195121951219513,
+              0.04878048780487805,
+              0.3048780487804878,
+              0.15040650406504066,
+              0.02032520325203252,
+              0.07317073170731707,
+              0.0040650406504065045,
+              0.036585365853658534
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                2,
+                0,
+                11,
+                1,
+                1,
+                2,
+                3,
+                13,
+                26,
+                0,
+                3,
+                1,
+                18
+              ],
+              [
+                3,
+                1,
+                64,
+                0,
+                18,
+                3,
+                12,
+                75,
+                37,
+                5,
+                18,
+                1,
+                9
+              ]
+            ],
+            "statistic": 55.70723694364295,
+            "df": 12,
+            "p": 1.3511973315232346e-07,
+            "n": 327,
+            "cramersV": 0.41274510628647565,
+            "expectedLessThan5": 14,
+            "expectedCells": 26,
+            "minExpected": 0.24770642201834864,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 3644601208
+            }
+          }
+        },
+        "Citation depth": {
+          "categories": [
+            "Deep citation",
+            "Moderate citation",
+            "Shallow citation"
+          ],
+          "counts": [
+            [
+              3,
+              17,
+              61
+            ],
+            [
+              17,
+              98,
+              131
+            ]
+          ],
+          "percentages": [
+            [
+              0.037037037037037035,
+              0.20987654320987653,
+              0.7530864197530864
+            ],
+            [
+              0.06910569105691057,
+              0.3983739837398374,
+              0.532520325203252
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                3,
+                17,
+                61
+              ],
+              [
+                17,
+                98,
+                131
+              ]
+            ],
+            "statistic": 12.229979572516134,
+            "df": 2,
+            "p": 0.0022094983365463215,
+            "n": 327,
+            "cramersV": 0.19339221585013572,
+            "expectedLessThan5": 1,
+            "expectedCells": 6,
+            "minExpected": 4.954128440366972,
+            "monteCarlo": {
+              "p": 0.001879962400751985,
+              "iterations": 50000,
+              "extreme": 93,
+              "seed": 113764272
+            }
+          }
+        },
+        "Citation strength": {
+          "categories": [
+            "1",
+            "2",
+            "3",
+            "4",
+            ">=5"
+          ],
+          "counts": [
+            [
+              79,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              83,
+              21,
+              8,
+              7,
+              9
+            ]
+          ],
+          "percentages": [
+            [
+              0.9875,
+              0.0125,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.6484375,
+              0.1640625,
+              0.0625,
+              0.0546875,
+              0.0703125
+            ]
+          ],
+          "test": {
+            "countsKept": [
+              [
+                79,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                83,
+                21,
+                8,
+                7,
+                9
+              ]
+            ],
+            "statistic": 32.95886644219978,
+            "df": 4,
+            "p": 1.2178686005471154e-06,
+            "n": 208,
+            "cramersV": 0.398065432641949,
+            "expectedLessThan5": 5,
+            "expectedCells": 10,
+            "minExpected": 2.6923076923076925,
+            "monteCarlo": {
+              "p": 1.999960000799984e-05,
+              "iterations": 50000,
+              "extreme": 0,
+              "seed": 3309708125
+            }
+          }
+        },
+        "Semantic similarity": {
+          "u1": 7493.5,
+          "u2": 12432.5,
+          "z": -3.3460041867987456,
+          "p": 0.0008198515776961873,
+          "n": 327,
+          "n1": 81,
+          "n2": 246,
+          "mean1": 0.6603330761316872,
+          "sd1": 0.06013586735261019,
+          "mean2": 0.6869706978319784,
+          "sd2": 0.052428658932647663,
+          "rankBiserial": 0.24786710830071268
+        }
+      }
+    }
+  },
+  "binaryStrengthSensitivity": {
+    "countsKept": [
+      [
+        1359,
+        223
+      ],
+      [
+        219,
+        82
+      ]
+    ],
+    "statistic": 32.198307864269424,
+    "df": 1,
+    "p": 1.3921194527045006e-08,
+    "n": 1883,
+    "cramersV": 0.13076495367265614,
+    "expectedLessThan5": 0,
+    "expectedCells": 4,
+    "minExpected": 48.7546468401487,
+    "monteCarlo": {
+      "p": 9.99990000099999e-06,
+      "iterations": 100000,
+      "extreme": 0,
+      "seed": 896177862
+    }
+  },
+  "bootstrap": [
+    {
+      "dimension": "Citation position",
+      "category": "Introduction",
+      "differenceG1MinusG2": 0.17608847575504977,
+      "articleCI": [
+        0.11127006311792073,
+        0.2384846853703593
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.0075044210369951125,
+        0.3855238438376613
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation position",
+      "category": "Related work",
+      "differenceG1MinusG2": 0.013134961731794195,
+      "articleCI": [
+        -0.04045198084597057,
+        0.06322979920172467
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.0007740501464508914,
+        0.11939354749407871
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation position",
+      "category": "Methods",
+      "differenceG1MinusG2": -0.09083331228371519,
+      "articleCI": [
+        -0.149028160332167,
+        -0.034025179601214574
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.1815712789429271,
+        0.033484671543323644
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation position",
+      "category": "Results",
+      "differenceG1MinusG2": -0.019857157291166744,
+      "articleCI": [
+        -0.05587141281515575,
+        0.013391108794441673
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.1430519839276337,
+        0.03761036762624137
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation position",
+      "category": "Discussion",
+      "differenceG1MinusG2": -0.07853296791196207,
+      "articleCI": [
+        -0.1363638633599068,
+        -0.027869283862901283
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.30306227106227107,
+        0.06502427382297937
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation distance",
+      "category": "Same sentence",
+      "differenceG1MinusG2": 0.1933018010053298,
+      "articleCI": [
+        0.12188271101247157,
+        0.2545233495351323
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        0.21955019358618724,
+        0.43851386708529566
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation distance",
+      "category": "Same paragraph",
+      "differenceG1MinusG2": 0.12998033965663863,
+      "articleCI": [
+        0.1038901333041206,
+        0.1566264897927274
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        0.11053133397409298,
+        0.15595107273678682
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation distance",
+      "category": "Same section",
+      "differenceG1MinusG2": -0.0020839121978327158,
+      "articleCI": [
+        -0.0707067921928896,
+        0.068476468284553
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.20419112474397028,
+        0.12550833126086322
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation distance",
+      "category": "Same article",
+      "differenceG1MinusG2": 0.010169070533060515,
+      "articleCI": [
+        -0.04883850604712063,
+        0.06847441291488197
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.05775767488738075,
+        0.0366773224293821
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation distance",
+      "category": "Single self-cited article",
+      "differenceG1MinusG2": -0.3313672989971962,
+      "articleCI": [
+        -0.4348473838491795,
+        -0.23663996917309532
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.6110063442111575,
+        -0.2103227024123595
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Foundation",
+      "differenceG1MinusG2": -0.0020491803278688526,
+      "articleCI": [
+        -0.0070261734340469045,
+        0.0
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.0057692307692307696,
+        0.0
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Inspiration",
+      "differenceG1MinusG2": -0.0204707536605286,
+      "articleCI": [
+        -0.04139664393846218,
+        -0.003177963808395712
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.04464554034497324,
+        0.004567338713680176
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Extension",
+      "differenceG1MinusG2": -0.004087835846657742,
+      "articleCI": [
+        -0.01311188453028648,
+        0.003485002981897947
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.024287807430664575,
+        0.00033035746102936126
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Application",
+      "differenceG1MinusG2": -0.06829232867715782,
+      "articleCI": [
+        -0.13483977738137162,
+        -0.007332669084259811
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.10380877034732733,
+        -0.03898961290845582
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Elaborated Citation",
+      "differenceG1MinusG2": 0.003092188907693214,
+      "articleCI": [
+        -0.004063499330154441,
+        0.009345915766476512
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.0007698460996185923,
+        0.008323158323158322
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Comparison",
+      "differenceG1MinusG2": -0.032713211582341896,
+      "articleCI": [
+        -0.05589129882850691,
+        -0.01282085790441772
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.05286353860016392,
+        -0.01151528828848946
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Similarity",
+      "differenceG1MinusG2": -0.019443532294324183,
+      "articleCI": [
+        -0.05049635559577347,
+        0.0011317210783477476
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.07115135599889715,
+        0.010060683887662233
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Affirmation",
+      "differenceG1MinusG2": -0.0276086791785597,
+      "articleCI": [
+        -0.051054956794407,
+        -0.005753044628765136
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.07392814953790566,
+        0.04761951267227893
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Related work",
+      "differenceG1MinusG2": -0.0030058854732375184,
+      "articleCI": [
+        -0.05432767978521813,
+        0.05211170286929566
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.07816062193065682,
+        0.08861562027176081
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Simple mention",
+      "differenceG1MinusG2": -0.0008672442681890158,
+      "articleCI": [
+        -0.054937310216433145,
+        0.056386999782321395
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.1259727940454246,
+        0.09613441730697686
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Comparison between Related Work",
+      "differenceG1MinusG2": -0.001514520026606717,
+      "articleCI": [
+        -0.013047019974226871,
+        0.008832478186102008
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.009926690949329154,
+        0.009560409884471457
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Future work",
+      "differenceG1MinusG2": -0.018887822374902122,
+      "articleCI": [
+        -0.042196734402686856,
+        0.0034155118781244317
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.028556041970676117,
+        0.04426259794305962
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Further reading",
+      "differenceG1MinusG2": 5.26240453998161e-06,
+      "articleCI": [
+        -0.005268678281222199,
+        0.0037194968308285606
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        0.0003663003663003663,
+        0.00632892723485058
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation function",
+      "category": "Historical background",
+      "differenceG1MinusG2": 0.1958435423981409,
+      "articleCI": [
+        0.15945465908379092,
+        0.2302969481486586
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.031111247250620033,
+        0.42778671193305345
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation depth",
+      "category": "Deep citation",
+      "differenceG1MinusG2": -0.029075837564306588,
+      "articleCI": [
+        -0.06894026216430543,
+        0.007204058155950023
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.10302811830683103,
+        -0.017942327110088575
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation depth",
+      "category": "Moderate citation",
+      "differenceG1MinusG2": -0.19622664544865154,
+      "articleCI": [
+        -0.25185806652898285,
+        -0.13983433435774717
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.2923022307589643,
+        0.014186881574288547
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation depth",
+      "category": "Shallow citation",
+      "differenceG1MinusG2": 0.22530248301295808,
+      "articleCI": [
+        0.16008296873520725,
+        0.2958913468965277
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        0.045627214672206096,
+        0.35269298642843283
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation strength",
+      "category": "1",
+      "differenceG1MinusG2": 0.13146444006703317,
+      "articleCI": [
+        0.07357378568999598,
+        0.19046505376052722
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        0.03293995859213261,
+        0.24252312967521095
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation strength",
+      "category": "2",
+      "differenceG1MinusG2": -0.04314526798577016,
+      "articleCI": [
+        -0.08907283010104772,
+        0.00017761443002671133
+      ],
+      "articleSignificant": false,
+      "journalCI": [
+        -0.1057745927318296,
+        -0.011494315498892155
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation strength",
+      "category": "3",
+      "differenceG1MinusG2": -0.02406432834504454,
+      "articleCI": [
+        -0.04667829062589359,
+        -0.0029544326271048814
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.04159822510239793,
+        0.0068907776688097045
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Citation strength",
+      "category": "4",
+      "differenceG1MinusG2": -0.03244347749389939,
+      "articleCI": [
+        -0.05578842952388066,
+        -0.010953639212290964
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.04863428952816824,
+        -0.020508111711503824
+      ],
+      "journalSignificant": true
+    },
+    {
+      "dimension": "Citation strength",
+      "category": ">=5",
+      "differenceG1MinusG2": -0.03181136624231911,
+      "articleCI": [
+        -0.05781364891540784,
+        -0.008156133635657505
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.05527911717700047,
+        0.003025680142384948
+      ],
+      "journalSignificant": false
+    },
+    {
+      "dimension": "Semantic similarity",
+      "category": "Mean score",
+      "differenceG1MinusG2": -0.023490655767525292,
+      "articleCI": [
+        -0.030868086999466596,
+        -0.016164296661202733
+      ],
+      "articleSignificant": true,
+      "journalCI": [
+        -0.05239761651382724,
+        -0.019837024004783377
+      ],
+      "journalSignificant": true
+    }
+  ],
+  "leaveOneJournalOut": [
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G1-1",
+      "excludedJournal": "Library Hi Tech",
+      "countsKept": [
+        [
+          901,
+          121,
+          217,
+          34,
+          145
+        ],
+        [
+          180,
+          56,
+          112,
+          33,
+          107
+        ]
+      ],
+      "statistic": 118.43375102180967,
+      "df": 4,
+      "p": 1.1538675168642732e-24,
+      "n": 1906,
+      "cramersV": 0.249273604743735,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 17.154249737670515,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 794719017
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G1-2",
+      "excludedJournal": "Activities, Adaptation & Aging",
+      "countsKept": [
+        [
+          999,
+          227,
+          268,
+          93,
+          213
+        ],
+        [
+          180,
+          56,
+          112,
+          33,
+          107
+        ]
+      ],
+      "statistic": 70.97795300297338,
+      "df": 4,
+      "p": 1.4108960538708932e-14,
+      "n": 2288,
+      "cramersV": 0.1761301581393563,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 26.874125874125873,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3092595071
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G1-3",
+      "excludedJournal": "Engineering Technology & Applied Science Research",
+      "countsKept": [
+        [
+          346,
+          171,
+          75,
+          68,
+          195
+        ],
+        [
+          180,
+          56,
+          112,
+          33,
+          107
+        ]
+      ],
+      "statistic": 59.92499645889447,
+      "df": 4,
+      "p": 3.0080728487025803e-12,
+      "n": 1343,
+      "cramersV": 0.21123505989263236,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 36.69992553983619,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3244053013
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G1-4",
+      "excludedJournal": "Exploratory Animal and Medical Research",
+      "countsKept": [
+        [
+          970,
+          249,
+          269,
+          87,
+          274
+        ],
+        [
+          180,
+          56,
+          112,
+          33,
+          107
+        ]
+      ],
+      "statistic": 52.07306661598639,
+      "df": 4,
+      "p": 1.3317670358850743e-10,
+      "n": 2337,
+      "cramersV": 0.14927161135443162,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 25.057766367137354,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1601758898
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G1-5",
+      "excludedJournal": "Regional Statistics",
+      "countsKept": [
+        [
+          1028,
+          228,
+          251,
+          90,
+          269
+        ],
+        [
+          180,
+          56,
+          112,
+          33,
+          107
+        ]
+      ],
+      "statistic": 64.24468762306884,
+      "df": 4,
+      "p": 3.711627618715681e-13,
+      "n": 2354,
+      "cramersV": 0.1652020307679897,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 25.498725573491928,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 712619808
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G2-1",
+      "excludedJournal": "Information Management",
+      "countsKept": [
+        [
+          1061,
+          249,
+          270,
+          93,
+          274
+        ],
+        [
+          147,
+          29,
+          86,
+          27,
+          95
+        ]
+      ],
+      "statistic": 65.13904735051997,
+      "df": 4,
+      "p": 2.40536378856123e-13,
+      "n": 2331,
+      "cramersV": 0.16716662124375287,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 19.768339768339768,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 765795680
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G2-2",
+      "excludedJournal": "Nature Aging",
+      "countsKept": [
+        [
+          1061,
+          249,
+          270,
+          93,
+          274
+        ],
+        [
+          169,
+          55,
+          97,
+          22,
+          84
+        ]
+      ],
+      "statistic": 40.16124904581521,
+      "df": 4,
+      "p": 4.008473800938856e-08,
+      "n": 2374,
+      "cramersV": 0.13006583947073225,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 20.684498736310026,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3063663558
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G2-3",
+      "excludedJournal": "Engineering",
+      "countsKept": [
+        [
+          1061,
+          249,
+          270,
+          93,
+          274
+        ],
+        [
+          164,
+          55,
+          111,
+          28,
+          105
+        ]
+      ],
+      "statistic": 69.99926656916386,
+      "df": 4,
+      "p": 2.2706514420503216e-14,
+      "n": 2410,
+      "cramersV": 0.17042693104488854,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 23.246058091286308,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3281435708
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G2-4",
+      "excludedJournal": "Animal Nutrition",
+      "countsKept": [
+        [
+          1061,
+          249,
+          270,
+          93,
+          274
+        ],
+        [
+          163,
+          56,
+          104,
+          32,
+          81
+        ]
+      ],
+      "statistic": 52.248086795028215,
+      "df": 4,
+      "p": 1.2241271717896374e-10,
+      "n": 2383,
+      "cramersV": 0.14807207927541047,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 22.870331514897188,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1564092635
+      }
+    },
+    {
+      "dimension": "Citation position",
+      "excludedLabel": "G2-5",
+      "excludedJournal": "Landscape and Urban Planning",
+      "countsKept": [
+        [
+          1061,
+          249,
+          270,
+          93,
+          274
+        ],
+        [
+          77,
+          29,
+          50,
+          23,
+          63
+        ]
+      ],
+      "statistic": 57.27319017537249,
+      "df": 4,
+      "p": 1.0842091784957164e-11,
+      "n": 2189,
+      "cramersV": 0.16175317216381954,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 12.824120603015075,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 741824873
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G1-1",
+      "excludedJournal": "Library Hi Tech",
+      "countsKept": [
+        [
+          343,
+          205,
+          236,
+          217,
+          417
+        ],
+        [
+          35,
+          7,
+          92,
+          78,
+          276
+        ]
+      ],
+      "statistic": 183.1063678692613,
+      "df": 4,
+      "p": 1.604533467526922e-38,
+      "n": 1906,
+      "cramersV": 0.3099490259255951,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 54.279118572927594,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 658826317
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G1-2",
+      "excludedJournal": "Activities, Adaptation & Aging",
+      "countsKept": [
+        [
+          470,
+          255,
+          328,
+          313,
+          434
+        ],
+        [
+          35,
+          7,
+          92,
+          78,
+          276
+        ]
+      ],
+      "statistic": 247.5124521396263,
+      "df": 4,
+      "p": 2.235713480204173e-52,
+      "n": 2288,
+      "cramersV": 0.3289050308094948,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 55.88111888111888,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3225162979
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G1-3",
+      "excludedJournal": "Engineering Technology & Applied Science Research",
+      "countsKept": [
+        [
+          302,
+          126,
+          182,
+          145,
+          100
+        ],
+        [
+          35,
+          7,
+          92,
+          78,
+          276
+        ]
+      ],
+      "statistic": 378.02877643961074,
+      "df": 4,
+      "p": 1.5519605715113074e-80,
+      "n": 1343,
+      "cramersV": 0.5305476851281097,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 48.32762472077439,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3375826289
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G1-4",
+      "excludedJournal": "Exploratory Animal and Medical Research",
+      "countsKept": [
+        [
+          461,
+          266,
+          363,
+          328,
+          431
+        ],
+        [
+          35,
+          7,
+          92,
+          78,
+          276
+        ]
+      ],
+      "statistic": 254.70731878952552,
+      "df": 4,
+      "p": 6.301105189319351e-54,
+      "n": 2337,
+      "cramersV": 0.33013483765775553,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 57.00641848523748,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1469738958
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G1-5",
+      "excludedJournal": "Regional Statistics",
+      "countsKept": [
+        [
+          488,
+          272,
+          343,
+          321,
+          442
+        ],
+        [
+          35,
+          7,
+          92,
+          78,
+          276
+        ]
+      ],
+      "statistic": 256.5103337566821,
+      "df": 4,
+      "p": 2.5759454499979132e-54,
+      "n": 2354,
+      "cramersV": 0.3301027965819887,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 57.83857264231096,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 580362308
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G2-1",
+      "excludedJournal": "Information Management",
+      "countsKept": [
+        [
+          516,
+          281,
+          363,
+          331,
+          456
+        ],
+        [
+          25,
+          6,
+          72,
+          51,
+          230
+        ]
+      ],
+      "statistic": 246.09239427533757,
+      "df": 4,
+      "p": 4.521671615015638e-52,
+      "n": 2331,
+      "cramersV": 0.32492113307364684,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 47.27927927927928,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 629025284
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G2-2",
+      "excludedJournal": "Nature Aging",
+      "countsKept": [
+        [
+          516,
+          281,
+          363,
+          331,
+          456
+        ],
+        [
+          35,
+          7,
+          92,
+          74,
+          219
+        ]
+      ],
+      "statistic": 195.01539395021186,
+      "df": 4,
+      "p": 4.430119348453543e-41,
+      "n": 2374,
+      "cramersV": 0.2866118154415848,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 51.80117944397641,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3195370154
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G2-3",
+      "excludedJournal": "Engineering",
+      "countsKept": [
+        [
+          516,
+          281,
+          363,
+          331,
+          456
+        ],
+        [
+          35,
+          7,
+          81,
+          75,
+          265
+        ]
+      ],
+      "statistic": 254.33509922445134,
+      "df": 4,
+      "p": 7.579019204595162e-54,
+      "n": 2410,
+      "cramersV": 0.32485879423638575,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 55.329460580912865,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3413936920
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G2-4",
+      "excludedJournal": "Animal Nutrition",
+      "countsKept": [
+        [
+          516,
+          281,
+          363,
+          331,
+          456
+        ],
+        [
+          35,
+          5,
+          79,
+          72,
+          245
+        ]
+      ],
+      "statistic": 235.13723149120318,
+      "df": 4,
+      "p": 1.034114639572266e-49,
+      "n": 2383,
+      "cramersV": 0.3141222351834995,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 52.327318506084765,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1431903607
+      }
+    },
+    {
+      "dimension": "Citation distance",
+      "excludedLabel": "G2-5",
+      "excludedJournal": "Landscape and Urban Planning",
+      "countsKept": [
+        [
+          516,
+          281,
+          363,
+          331,
+          456
+        ],
+        [
+          10,
+          3,
+          44,
+          40,
+          145
+        ]
+      ],
+      "statistic": 178.18234673203384,
+      "df": 4,
+      "p": 1.8317966656331273e-37,
+      "n": 2189,
+      "cramersV": 0.2853050483964323,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 31.396984924623116,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 609873421
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G1-1",
+      "excludedJournal": "Library Hi Tech",
+      "countsKept": [
+        [
+          0,
+          7,
+          5,
+          233,
+          8,
+          45,
+          13,
+          41,
+          310,
+          285,
+          11,
+          20,
+          4,
+          436
+        ],
+        [
+          1,
+          14,
+          4,
+          101,
+          2,
+          30,
+          14,
+          24,
+          112,
+          128,
+          5,
+          22,
+          1,
+          30
+        ]
+      ],
+      "statistic": 161.9216566870606,
+      "df": 13,
+      "p": 8.046319068933878e-28,
+      "n": 1906,
+      "cramersV": 0.2914680941171425,
+      "expectedLessThan5": 7,
+      "expectedCells": 28,
+      "minExpected": 0.25603357817418676,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 2950256034
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G1-2",
+      "excludedJournal": "Activities, Adaptation & Aging",
+      "countsKept": [
+        [
+          0,
+          16,
+          7,
+          253,
+          12,
+          50,
+          11,
+          17,
+          406,
+          476,
+          16,
+          41,
+          3,
+          492
+        ],
+        [
+          1,
+          14,
+          4,
+          101,
+          2,
+          30,
+          14,
+          24,
+          112,
+          128,
+          5,
+          22,
+          1,
+          30
+        ]
+      ],
+      "statistic": 174.82018902574416,
+      "df": 13,
+      "p": 1.929855447311107e-30,
+      "n": 2288,
+      "cramersV": 0.2764189307436985,
+      "expectedLessThan5": 7,
+      "expectedCells": 28,
+      "minExpected": 0.21328671328671328,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 954377996
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G1-3",
+      "excludedJournal": "Engineering Technology & Applied Science Research",
+      "countsKept": [
+        [
+          0,
+          11,
+          4,
+          70,
+          9,
+          18,
+          14,
+          29,
+          181,
+          299,
+          7,
+          44,
+          2,
+          167
+        ],
+        [
+          1,
+          14,
+          4,
+          101,
+          2,
+          30,
+          14,
+          24,
+          112,
+          128,
+          5,
+          22,
+          1,
+          30
+        ]
+      ],
+      "statistic": 110.90149037772065,
+      "df": 13,
+      "p": 1.2438481387280418e-17,
+      "n": 1343,
+      "cramersV": 0.28736289149018507,
+      "expectedLessThan5": 7,
+      "expectedCells": 28,
+      "minExpected": 0.3633655994043187,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1105163894
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G1-4",
+      "excludedJournal": "Exploratory Animal and Medical Research",
+      "countsKept": [
+        [
+          0,
+          16,
+          8,
+          265,
+          14,
+          56,
+          18,
+          42,
+          439,
+          493,
+          17,
+          51,
+          4,
+          426
+        ],
+        [
+          1,
+          14,
+          4,
+          101,
+          2,
+          30,
+          14,
+          24,
+          112,
+          128,
+          5,
+          22,
+          1,
+          30
+        ]
+      ],
+      "statistic": 117.99068691088677,
+      "df": 13,
+      "p": 5.019103132862504e-19,
+      "n": 2337,
+      "cramersV": 0.22469556917425226,
+      "expectedLessThan5": 7,
+      "expectedCells": 28,
+      "minExpected": 0.20881471972614463,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3758359065
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G1-5",
+      "excludedJournal": "Regional Statistics",
+      "countsKept": [
+        [
+          0,
+          14,
+          8,
+          259,
+          13,
+          55,
+          16,
+          39,
+          428,
+          483,
+          17,
+          48,
+          3,
+          483
+        ],
+        [
+          1,
+          14,
+          4,
+          101,
+          2,
+          30,
+          14,
+          24,
+          112,
+          128,
+          5,
+          22,
+          1,
+          30
+        ]
+      ],
+      "statistic": 140.7807076250367,
+      "df": 13,
+      "p": 1.4680631495849793e-23,
+      "n": 2354,
+      "cramersV": 0.24455038037344623,
+      "expectedLessThan5": 7,
+      "expectedCells": 28,
+      "minExpected": 0.20730671197960918,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 2868842923
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G2-1",
+      "excludedJournal": "Information Management",
+      "countsKept": [
+        [
+          16,
+          8,
+          270,
+          14,
+          56,
+          18,
+          42,
+          441,
+          509,
+          17,
+          51,
+          4,
+          501
+        ],
+        [
+          5,
+          3,
+          87,
+          1,
+          25,
+          14,
+          24,
+          94,
+          78,
+          5,
+          20,
+          1,
+          27
+        ]
+      ],
+      "statistic": 129.49258776125598,
+      "df": 12,
+      "p": 7.802828901848876e-22,
+      "n": 2331,
+      "cramersV": 0.23569551481085615,
+      "expectedLessThan5": 6,
+      "expectedCells": 26,
+      "minExpected": 0.8236808236808236,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 2920789995
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G2-2",
+      "excludedJournal": "Nature Aging",
+      "countsKept": [
+        [
+          0,
+          16,
+          8,
+          270,
+          14,
+          56,
+          18,
+          42,
+          441,
+          509,
+          17,
+          51,
+          4,
+          501
+        ],
+        [
+          1,
+          13,
+          4,
+          91,
+          1,
+          27,
+          4,
+          19,
+          101,
+          108,
+          5,
+          22,
+          1,
+          30
+        ]
+      ],
+      "statistic": 116.46011704041695,
+      "df": 13,
+      "p": 1.0054527223839974e-18,
+      "n": 2374,
+      "cramersV": 0.22148700666135013,
+      "expectedLessThan5": 8,
+      "expectedCells": 28,
+      "minExpected": 0.17986520640269588,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 924903749
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G2-3",
+      "excludedJournal": "Engineering",
+      "countsKept": [
+        [
+          0,
+          16,
+          8,
+          270,
+          14,
+          56,
+          18,
+          42,
+          441,
+          509,
+          17,
+          51,
+          4,
+          501
+        ],
+        [
+          1,
+          14,
+          3,
+          96,
+          2,
+          29,
+          14,
+          23,
+          109,
+          125,
+          5,
+          22,
+          1,
+          19
+        ]
+      ],
+      "statistic": 153.96988673495207,
+      "df": 13,
+      "p": 3.2629754053394424e-26,
+      "n": 2410,
+      "cramersV": 0.25276059781349236,
+      "expectedLessThan5": 7,
+      "expectedCells": 28,
+      "minExpected": 0.19211618257261412,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1143085263
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G2-4",
+      "excludedJournal": "Animal Nutrition",
+      "countsKept": [
+        [
+          0,
+          16,
+          8,
+          270,
+          14,
+          56,
+          18,
+          42,
+          441,
+          509,
+          17,
+          51,
+          4,
+          501
+        ],
+        [
+          1,
+          13,
+          3,
+          93,
+          2,
+          27,
+          13,
+          18,
+          107,
+          110,
+          5,
+          20,
+          1,
+          23
+        ]
+      ],
+      "statistic": 133.82369237388218,
+      "df": 13,
+      "p": 3.6161029291656947e-22,
+      "n": 2383,
+      "cramersV": 0.23697606464271212,
+      "expectedLessThan5": 7,
+      "expectedCells": 28,
+      "minExpected": 0.1829626521191775,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3720186992
+      }
+    },
+    {
+      "dimension": "Citation function",
+      "excludedLabel": "G2-5",
+      "excludedJournal": "Landscape and Urban Planning",
+      "countsKept": [
+        [
+          0,
+          16,
+          8,
+          270,
+          14,
+          56,
+          18,
+          42,
+          441,
+          509,
+          17,
+          51,
+          4,
+          501
+        ],
+        [
+          1,
+          11,
+          3,
+          37,
+          2,
+          12,
+          11,
+          12,
+          37,
+          91,
+          0,
+          4,
+          0,
+          21
+        ]
+      ],
+      "statistic": 112.00274802835071,
+      "df": 13,
+      "p": 7.56456438212157e-18,
+      "n": 2189,
+      "cramersV": 0.22619940509917968,
+      "expectedLessThan5": 9,
+      "expectedCells": 28,
+      "minExpected": 0.11055276381909548,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 2898557922
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G1-1",
+      "excludedJournal": "Library Hi Tech",
+      "countsKept": [
+        [
+          85,
+          287,
+          1046
+        ],
+        [
+          38,
+          190,
+          260
+        ]
+      ],
+      "statistic": 74.74730571449498,
+      "df": 2,
+      "p": 5.872578023142639e-17,
+      "n": 1906,
+      "cramersV": 0.19803243307890658,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 31.492130115424974,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 767084945
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G1-2",
+      "excludedJournal": "Activities, Adaptation & Aging",
+      "countsKept": [
+        [
+          94,
+          316,
+          1390
+        ],
+        [
+          38,
+          190,
+          260
+        ]
+      ],
+      "statistic": 114.24054486417995,
+      "df": 2,
+      "p": 1.5594838369508057e-25,
+      "n": 2288,
+      "cramersV": 0.22345090751663713,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 28.153846153846153,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3066043159
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G1-3",
+      "excludedJournal": "Engineering Technology & Applied Science Research",
+      "countsKept": [
+        [
+          14,
+          171,
+          670
+        ],
+        [
+          38,
+          190,
+          260
+        ]
+      ],
+      "statistic": 100.00815388001297,
+      "df": 2,
+      "p": 1.9209024580846957e-22,
+      "n": 1343,
+      "cramersV": 0.27288502195022557,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 18.89501116902457,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3284331181
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G1-4",
+      "excludedJournal": "Exploratory Animal and Medical Research",
+      "countsKept": [
+        [
+          95,
+          371,
+          1383
+        ],
+        [
+          38,
+          190,
+          260
+        ]
+      ],
+      "statistic": 87.45890091011411,
+      "df": 2,
+      "p": 1.0198609677006472e-19,
+      "n": 2337,
+      "cramersV": 0.193451744952609,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 27.772357723577237,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1579056650
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G1-5",
+      "excludedJournal": "Regional Statistics",
+      "countsKept": [
+        [
+          92,
+          359,
+          1415
+        ],
+        [
+          38,
+          190,
+          260
+        ]
+      ],
+      "statistic": 97.70634225249498,
+      "df": 2,
+      "p": 6.072078204998779e-22,
+      "n": 2354,
+      "cramersV": 0.20373148388117232,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 26.94987255734919,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 757304696
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G2-1",
+      "excludedJournal": "Information Management",
+      "countsKept": [
+        [
+          95,
+          376,
+          1476
+        ],
+        [
+          24,
+          143,
+          217
+        ]
+      ],
+      "statistic": 63.927884586123604,
+      "df": 2,
+      "p": 1.3129138877943031e-14,
+      "n": 2331,
+      "cramersV": 0.16560522308350342,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 19.603603603603602,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 804930488
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G2-2",
+      "excludedJournal": "Nature Aging",
+      "countsKept": [
+        [
+          95,
+          376,
+          1476
+        ],
+        [
+          37,
+          169,
+          221
+        ]
+      ],
+      "statistic": 100.02502689569744,
+      "df": 2,
+      "p": 1.9047649173924218e-22,
+      "n": 2374,
+      "cramersV": 0.2052645640060744,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 23.742207245155853,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3103880558
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G2-3",
+      "excludedJournal": "Engineering",
+      "countsKept": [
+        [
+          95,
+          376,
+          1476
+        ],
+        [
+          33,
+          187,
+          243
+        ]
+      ],
+      "statistic": 103.22117274206077,
+      "df": 2,
+      "p": 3.853072060206691e-23,
+      "n": 2410,
+      "cramersV": 0.20695497610261798,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 24.590871369294607,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3254822116
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G2-4",
+      "excludedJournal": "Animal Nutrition",
+      "countsKept": [
+        [
+          95,
+          376,
+          1476
+        ],
+        [
+          37,
+          169,
+          230
+        ]
+      ],
+      "statistic": 93.74177495750065,
+      "df": 2,
+      "p": 4.407904798251942e-21,
+      "n": 2383,
+      "cramersV": 0.19833737682849814,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 24.15107007973143,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1608847427
+      }
+    },
+    {
+      "dimension": "Citation depth",
+      "excludedLabel": "G2-5",
+      "excludedJournal": "Landscape and Urban Planning",
+      "countsKept": [
+        [
+          95,
+          376,
+          1476
+        ],
+        [
+          21,
+          92,
+          129
+        ]
+      ],
+      "statistic": 55.95039263179186,
+      "df": 2,
+      "p": 7.088047346041031e-13,
+      "n": 2189,
+      "cramersV": 0.15987431197337262,
+      "expectedLessThan5": 0,
+      "expectedCells": 6,
+      "minExpected": 12.824120603015075,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 719192017
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G1-1",
+      "excludedJournal": "Library Hi Tech",
+      "countsKept": [
+        [
+          1026,
+          101,
+          14,
+          11,
+          16
+        ],
+        [
+          219,
+          44,
+          12,
+          13,
+          13
+        ]
+      ],
+      "statistic": 52.83091288151955,
+      "df": 4,
+      "p": 9.245033978768937e-11,
+      "n": 1469,
+      "cramersV": 0.18964140299550045,
+      "expectedLessThan5": 1,
+      "expectedCells": 10,
+      "minExpected": 4.917631041524847,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 2876557227
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G1-2",
+      "excludedJournal": "Activities, Adaptation & Aging",
+      "countsKept": [
+        [
+          1263,
+          144,
+          22,
+          16,
+          18
+        ],
+        [
+          219,
+          44,
+          12,
+          13,
+          13
+        ]
+      ],
+      "statistic": 48.146324885624274,
+      "df": 4,
+      "p": 8.797666675822432e-10,
+      "n": 1764,
+      "cramersV": 0.16520845913322585,
+      "expectedLessThan5": 1,
+      "expectedCells": 10,
+      "minExpected": 4.948412698412699,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 879499525
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G1-3",
+      "excludedJournal": "Engineering Technology & Applied Science Research",
+      "countsKept": [
+        [
+          601,
+          83,
+          15,
+          7,
+          2
+        ],
+        [
+          219,
+          44,
+          12,
+          13,
+          13
+        ]
+      ],
+      "statistic": 42.949149965622226,
+      "df": 4,
+      "p": 1.060234839893554e-08,
+      "n": 1009,
+      "cramersV": 0.20631542711688916,
+      "expectedLessThan5": 1,
+      "expectedCells": 10,
+      "minExpected": 4.474727452923687,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1164372111
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G1-4",
+      "excludedJournal": "Exploratory Animal and Medical Research",
+      "countsKept": [
+        [
+          1266,
+          162,
+          24,
+          17,
+          18
+        ],
+        [
+          219,
+          44,
+          12,
+          13,
+          13
+        ]
+      ],
+      "statistic": 43.62908170690164,
+      "df": 4,
+      "p": 7.660850990181972e-09,
+      "n": 1788,
+      "cramersV": 0.15620836216023032,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 5.050335570469799,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3683286064
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G1-5",
+      "excludedJournal": "Regional Statistics",
+      "countsKept": [
+        [
+          1280,
+          162,
+          25,
+          17,
+          18
+        ],
+        [
+          219,
+          44,
+          12,
+          13,
+          13
+        ]
+      ],
+      "statistic": 44.00608041249854,
+      "df": 4,
+      "p": 6.397146430946157e-09,
+      "n": 1803,
+      "cramersV": 0.15622785884168564,
+      "expectedLessThan5": 0,
+      "expectedCells": 10,
+      "minExpected": 5.0083194675540765,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 2928118690
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G2-1",
+      "excludedJournal": "Information Management",
+      "countsKept": [
+        [
+          1359,
+          163,
+          25,
+          17,
+          18
+        ],
+        [
+          159,
+          33,
+          11,
+          11,
+          11
+        ]
+      ],
+      "statistic": 55.49113788581134,
+      "df": 4,
+      "p": 2.5634415513981452e-11,
+      "n": 1807,
+      "cramersV": 0.1752397959988593,
+      "expectedLessThan5": 3,
+      "expectedCells": 10,
+      "minExpected": 3.486441615938019,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 2846770658
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G2-2",
+      "excludedJournal": "Nature Aging",
+      "countsKept": [
+        [
+          1359,
+          163,
+          25,
+          17,
+          18
+        ],
+        [
+          197,
+          36,
+          10,
+          12,
+          11
+        ]
+      ],
+      "statistic": 41.88637592295114,
+      "df": 4,
+      "p": 1.7611192252795937e-08,
+      "n": 1848,
+      "cramersV": 0.15055161187146013,
+      "expectedLessThan5": 2,
+      "expectedCells": 10,
+      "minExpected": 4.174242424242424,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 849704780
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G2-3",
+      "excludedJournal": "Engineering",
+      "countsKept": [
+        [
+          1359,
+          163,
+          25,
+          17,
+          18
+        ],
+        [
+          202,
+          42,
+          12,
+          12,
+          13
+        ]
+      ],
+      "statistic": 52.07429690487674,
+      "df": 4,
+      "p": 1.330978340896202e-10,
+      "n": 1863,
+      "cramersV": 0.16718806832572325,
+      "expectedLessThan5": 2,
+      "expectedCells": 10,
+      "minExpected": 4.374127750939345,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 1202497206
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G2-4",
+      "excludedJournal": "Animal Nutrition",
+      "countsKept": [
+        [
+          1359,
+          163,
+          25,
+          17,
+          18
+        ],
+        [
+          182,
+          42,
+          11,
+          11,
+          13
+        ]
+      ],
+      "statistic": 56.22277763065567,
+      "df": 4,
+      "p": 1.800702152288948e-11,
+      "n": 1841,
+      "cramersV": 0.17475485682538455,
+      "expectedLessThan5": 2,
+      "expectedCells": 10,
+      "minExpected": 3.9391634980988592,
+      "monteCarlo": {
+        "p": 1.999960000799984e-05,
+        "iterations": 50000,
+        "extreme": 0,
+        "seed": 3645444697
+      }
+    },
+    {
+      "dimension": "Citation strength",
+      "excludedLabel": "G2-5",
+      "excludedJournal": "Landscape and Urban Planning",
+      "countsKept": [
+        [
+          1359,
+          163,
+          25,
+          17,
+          18
+        ],
+        [
+          136,
+          23,
+          4,
+          6,
+          4
+        ]
+      ],
+      "statistic": 11.3286501076186,
+      "df": 4,
+      "p": 0.023108462823471627,
+      "n": 1755,
+      "cramersV": 0.08034345826756753,
+      "expectedLessThan5": 3,
+      "expectedCells": 10,
+      "minExpected": 2.168660968660969,
+      "monteCarlo": {
+        "p": 0.02631947361052779,
+        "iterations": 50000,
+        "extreme": 1315,
+        "seed": 2957640171
+      }
+    }
+  ],
+  "fdr": [
+    {
+      "dimension": "Citation distance",
+      "p": 1.0573650334064772e-55,
+      "adjustedP": 6.3441902004388634e-55,
+      "significant": true
+    },
+    {
+      "dimension": "Citation function",
+      "p": 4.1907288146761823e-23,
+      "adjustedP": 1.2572186444028546e-22,
+      "significant": true
+    },
+    {
+      "dimension": "Citation depth",
+      "p": 4.1669684566883193e-22,
+      "adjustedP": 8.333936913376638e-22,
+      "significant": true
+    },
+    {
+      "dimension": "Semantic similarity",
+      "p": 2.668421709183629e-16,
+      "adjustedP": 4.0026325637754434e-16,
+      "significant": true
+    },
+    {
+      "dimension": "Citation position",
+      "p": 6.302349706375737e-13,
+      "adjustedP": 7.562819647650885e-13,
+      "significant": true
+    },
+    {
+      "dimension": "Citation strength",
+      "p": 5.298488534641688e-10,
+      "adjustedP": 5.298488534641688e-10,
+      "significant": true
+    }
+  ]
+}

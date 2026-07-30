@@ -1,5 +1,5 @@
 ﻿Validation component,Task,Metric,Value,n
-Human inter-annotator agreement,Citation Function,Cohen's kappa,0.7406483790523689,39
+Human inter-annotator agreement,Citation Function,Cohen's kappa,0.8054862842892767,39
 Human inter-annotator agreement,Citation Depth,Cohen's kappa,0.7022900763358778,39
 GPT-4o held-out evaluation,Citation Function,Overall accuracy,0.5714285714285714,84
 GPT-4o held-out evaluation,Citation Function,Weighted F1,0.5418755221386801,84

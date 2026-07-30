@@ -1,7 +1,7 @@
 {
   "inputs": {
     "agreementFile": "data/inter_annotator_agreement.xlsx",
-    "agreementSheet": "2022人工标注对照表",
+    "agreementSheet": "2022 Annotation Comparison",
     "agreementColumns": {
       "citationFunction": [
         "K",
@@ -27,9 +27,9 @@
   "interAnnotatorAgreement": {
     "citationFunction": {
       "n": 39,
-      "observedAgreement": 0.7948717948717948,
+      "observedAgreement": 0.8461538461538461,
       "expectedAgreement": 0.20907297830374755,
-      "cohenKappa": 0.7406483790523689
+      "cohenKappa": 0.8054862842892767
     },
     "citationDepth": {
       "n": 39,

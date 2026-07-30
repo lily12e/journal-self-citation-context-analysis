@@ -19,7 +19,7 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=Path("data/inter_annotator_agreement.xlsx"),
     )
-    parser.add_argument("--agreement-sheet", default="2022人工标注对照表")
+    parser.add_argument("--agreement-sheet", default="2022 Annotation Comparison")
     parser.add_argument(
         "--test-set",
         type=Path,

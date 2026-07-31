@@ -55,6 +55,23 @@ the parsed JSON content.
 `data/full_annotation_results.xlsx` is the downstream final analysis dataset,
 not the source workbook for reconstructing the fine-tuning test file.
 
+## Citation Function category coverage
+
+The complete conceptual taxonomy contains 15 Citation Function categories.
+The GPT-4o prompt exposes 14 output options, excluding `Irrelevant citation`.
+The released 84-instance held-out test set represents 10 of these 14 model
+output categories: Affirmation, Application, Comparison, Comparison between
+Related Work, Extension, Future Work, Historical Background, Inspiration,
+Related Work, and Simple Mention. Category-level evaluation metrics and the
+confusion matrix are therefore calculated for these 10 represented categories;
+the test set was not artificially supplemented with instances from the four
+unrepresented model-output categories.
+
+The machine-readable files retain the original annotation strings (for
+example, `Related work` and `Historical background`). Title capitalization in
+the manuscript and Supplementary Material is a display convention and does not
+define a separate category.
+
 To create a deterministic training/validation split:
 
 ```text

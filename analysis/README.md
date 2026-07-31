@@ -38,6 +38,17 @@ The workflow does not call an external API.
 These values are the command defaults and are recorded in
 `results/analysis_results.json`.
 
+## Citation Function category accounting
+
+The complete conceptual Citation Function taxonomy contains 15 categories.
+The operational model label set and aggregate dataset contain 14 categories;
+`Irrelevant citation` is not a GPT-4o output option and has zero observations in
+both aggregate comparison groups. It is therefore excluded before the
+chi-square test, which uses 14 nonzero categories and 13 degrees of freedom.
+Separately, the 84-instance held-out model-evaluation set represents 10 of the
+14 model-output categories. The evaluation JSON records the conceptual,
+model-output, and represented-label counts separately.
+
 ## Figure source files
 
 The CSV files named `figure*_source_data.csv` contain the numerical values

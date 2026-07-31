@@ -257,7 +257,16 @@
           "Related work": 2,
           "Simple mention": 12
         }
-      }
+      },
+      "conceptualTaxonomyCategoryCount": 15,
+      "modelOutputCategoryCount": 14,
+      "representedCategoryCount": 10,
+      "unrepresentedModelOutputCategories": [
+        "Foundation",
+        "Elaborated Citation",
+        "Similarity",
+        "Further reading"
+      ]
     },
     "citationDepth": {
       "n": 84,

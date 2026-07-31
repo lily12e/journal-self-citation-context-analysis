@@ -59,7 +59,7 @@ DISTANCE = [
     "Same article",
     "Single self-cited article",
 ]
-FUNCTION = [
+FUNCTION_TAXONOMY = [
     "Foundation",
     "Inspiration",
     "Extension",
@@ -74,6 +74,14 @@ FUNCTION = [
     "Future work",
     "Further reading",
     "Historical background",
+    "Irrelevant citation",
+]
+# The aggregate chi-square analysis uses the 14 observed categories. The
+# fifteenth taxonomy category, Irrelevant citation, is all-zero in both groups.
+FUNCTION = [
+    category
+    for category in FUNCTION_TAXONOMY
+    if category != "Irrelevant citation"
 ]
 DEPTH = ["Deep citation", "Moderate citation", "Shallow citation"]
 STRENGTH = ["1", "2", "3", "4", ">=5"]

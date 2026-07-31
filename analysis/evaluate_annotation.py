@@ -12,6 +12,30 @@ from openpyxl import load_workbook
 from openpyxl.utils import column_index_from_string
 
 
+CITATION_FUNCTION_CONCEPTUAL_TAXONOMY = [
+    "Foundation",
+    "Inspiration",
+    "Extension",
+    "Application",
+    "Elaborated Citation",
+    "Comparison",
+    "Similarity",
+    "Affirmation",
+    "Related work",
+    "Simple mention",
+    "Comparison between Related Work",
+    "Future work",
+    "Further reading",
+    "Historical background",
+    "Irrelevant citation",
+]
+CITATION_FUNCTION_MODEL_LABELS = [
+    label
+    for label in CITATION_FUNCTION_CONCEPTUAL_TAXONOMY
+    if label != "Irrelevant citation"
+]
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -170,6 +194,27 @@ def main() -> int:
     depth_truth = [text(row[6]) for row in rows]
     depth_prediction = [text(row[7]) for row in rows]
 
+    function_evaluation = classification_metrics(
+        function_truth, function_prediction
+    )
+    represented_function_labels = set(function_evaluation["labels"])
+    function_evaluation.update(
+        {
+            "conceptualTaxonomyCategoryCount": len(
+                CITATION_FUNCTION_CONCEPTUAL_TAXONOMY
+            ),
+            "modelOutputCategoryCount": len(
+                CITATION_FUNCTION_MODEL_LABELS
+            ),
+            "representedCategoryCount": len(represented_function_labels),
+            "unrepresentedModelOutputCategories": [
+                label
+                for label in CITATION_FUNCTION_MODEL_LABELS
+                if label not in represented_function_labels
+            ],
+        }
+    )
+
     output = {
         "inputs": {
             "agreementFile": args.agreement.as_posix(),
@@ -189,9 +234,7 @@ def main() -> int:
             "citationDepth": cohen_kappa(depth_left, depth_right),
         },
         "heldOutModelEvaluation": {
-            "citationFunction": classification_metrics(
-                function_truth, function_prediction
-            ),
+            "citationFunction": function_evaluation,
             "citationDepth": classification_metrics(
                 depth_truth, depth_prediction
             ),

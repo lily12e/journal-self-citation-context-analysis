@@ -12,6 +12,18 @@ position, distance, strength, function, depth, and semantic similarity—to
 compare JCR-suppressed and comparator journals across five disciplinary
 categories.
 
+### Citation Function category accounting
+
+The complete conceptual Citation Function taxonomy contains 15 categories.
+The GPT-4o output options contain 14 categories, excluding `Irrelevant
+citation`; the aggregate final dataset contains observations in these same 14
+categories. The all-zero conceptual category is excluded from the aggregate
+chi-square analysis, which yields 13 degrees of freedom. The independent
+84-instance held-out test set represents 10 of the 14 model-output categories.
+Thus, the counts 15, 14, and 10 refer respectively to the conceptual taxonomy,
+the operational model/aggregate categories, and the categories represented in
+the held-out test set.
+
 ## Repository structure
 
 ```text

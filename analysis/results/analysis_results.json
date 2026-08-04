@@ -1833,7 +1833,7 @@
         "strengthOccurrences": 80
       },
       "G2-1": {
-        "journal": "Information Management",
+        "journal": "Information & Management",
         "mentions": 104,
         "articles": 53,
         "strengthOccurrences": 76
@@ -5143,7 +5143,7 @@
     {
       "dimension": "Citation position",
       "excludedLabel": "G2-1",
-      "excludedJournal": "Information Management",
+      "excludedJournal": "Information & Management",
       "countsKept": [
         [
           1061,
@@ -5493,7 +5493,7 @@
     {
       "dimension": "Citation distance",
       "excludedLabel": "G2-1",
-      "excludedJournal": "Information Management",
+      "excludedJournal": "Information & Management",
       "countsKept": [
         [
           516,
@@ -5933,7 +5933,7 @@
     {
       "dimension": "Citation function",
       "excludedLabel": "G2-1",
-      "excludedJournal": "Information Management",
+      "excludedJournal": "Information & Management",
       "countsKept": [
         [
           16,
@@ -6351,7 +6351,7 @@
     {
       "dimension": "Citation depth",
       "excludedLabel": "G2-1",
-      "excludedJournal": "Information Management",
+      "excludedJournal": "Information & Management",
       "countsKept": [
         [
           95,
@@ -6681,7 +6681,7 @@
     {
       "dimension": "Citation strength",
       "excludedLabel": "G2-1",
-      "excludedJournal": "Information Management",
+      "excludedJournal": "Information & Management",
       "countsKept": [
         [
           1359,

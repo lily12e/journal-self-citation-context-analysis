@@ -21,7 +21,9 @@ The workflow does not call an external API.
   Strength occurrences, and writes `results/analysis_records.json`.
 - `evaluate_annotation.py` recalculates Cohen's kappa from
   `data/inter_annotator_agreement.xlsx` and held-out model metrics from
-  `semantic_annotation/training_data/test_set_84.xlsx`.
+  `semantic_annotation/training_data/test_set_84.xlsx`. Direct recalculation
+  from the released agreement workbook gives Citation Function κ = 0.805 and
+  Citation Depth κ = 0.702 (`n = 39`).
 - `run_full_analysis.py` performs aggregate and discipline-level tests,
   fixed-margin Monte Carlo tests, hierarchical bootstrap analyses,
   leave-one-journal-out analyses, and Benjamini-Hochberg correction.

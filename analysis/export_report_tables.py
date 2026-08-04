@@ -39,6 +39,20 @@ HYPOTHESES = {
     "Semantic similarity": "H2c",
 }
 
+# Preserve the original machine-readable annotation strings in the released
+# data and analysis JSON, while using the manuscript's formal display labels
+# in report-facing tables and figure source files.
+DISPLAY_LABELS = {
+    "Simple mention": "Simple Mention",
+    "Historical background": "Historical Background",
+    "Related work": "Related Work",
+    "Shallow citation": "Shallow Citation",
+}
+
+
+def display_label(value: object) -> object:
+    return DISPLAY_LABELS.get(value, value)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -80,8 +94,12 @@ def significance(value: float) -> str:
 def confusion_rows(result: dict[str, object]) -> tuple[list[str], list[list[object]]]:
     labels = result["labels"]
     matrix = result["confusionMatrix"]
-    rows = [[actual] + [matrix[actual][predicted] for predicted in labels] for actual in labels]
-    return ["True label"] + labels, rows
+    rows = [
+        [display_label(actual)]
+        + [matrix[actual][predicted] for predicted in labels]
+        for actual in labels
+    ]
+    return ["True label"] + [display_label(label) for label in labels], rows
 
 
 def discipline_source_rows(field_result: dict[str, object]) -> list[list[object]]:
@@ -106,7 +124,7 @@ def discipline_source_rows(field_result: dict[str, object]) -> list[list[object]
             rows.append(
                 [
                     dimension,
-                    category,
+                    display_label(category),
                     result["counts"][0][index],
                     result["percentages"][0][index],
                     "",
@@ -187,7 +205,7 @@ def main() -> int:
             table4_rows.append(
                 [
                     dimension,
-                    category,
+                    display_label(category),
                     result["counts"][0][index],
                     result["percentages"][0][index],
                     "",
@@ -238,42 +256,42 @@ def main() -> int:
         [
             [
                 "Human inter-annotator agreement",
-                "Citation Function",
+                "Citation function",
                 "Cohen's kappa",
                 agreement["citationFunction"]["cohenKappa"],
                 agreement["citationFunction"]["n"],
             ],
             [
                 "Human inter-annotator agreement",
-                "Citation Depth",
+                "Citation depth",
                 "Cohen's kappa",
                 agreement["citationDepth"]["cohenKappa"],
                 agreement["citationDepth"]["n"],
             ],
             [
                 "GPT-4o held-out evaluation",
-                "Citation Function",
+                "Citation function",
                 "Overall accuracy",
                 model["citationFunction"]["accuracy"],
                 model["citationFunction"]["n"],
             ],
             [
                 "GPT-4o held-out evaluation",
-                "Citation Function",
+                "Citation function",
                 "Weighted F1",
                 model["citationFunction"]["weightedAverage"]["f1"],
                 model["citationFunction"]["n"],
             ],
             [
                 "GPT-4o held-out evaluation",
-                "Citation Depth",
+                "Citation depth",
                 "Overall accuracy",
                 model["citationDepth"]["accuracy"],
                 model["citationDepth"]["n"],
             ],
             [
                 "GPT-4o held-out evaluation",
-                "Citation Depth",
+                "Citation depth",
                 "Weighted F1",
                 model["citationDepth"]["weightedAverage"]["f1"],
                 model["citationDepth"]["n"],
@@ -288,7 +306,7 @@ def main() -> int:
         item = model[key]
         metric_rows = [
             [
-                row["category"],
+                display_label(row["category"]),
                 row["precision"],
                 row["recall"],
                 row["f1"],
@@ -470,7 +488,7 @@ def main() -> int:
         [
             [
                 row["dimension"],
-                row["category"],
+                display_label(row["category"]),
                 row["differenceG1MinusG2"],
                 row["articleCI"][0],
                 row["articleCI"][1],

@@ -100,7 +100,7 @@ JOURNAL_NAMES = {
     "G1-3": "Engineering Technology & Applied Science Research",
     "G1-4": "Exploratory Animal and Medical Research",
     "G1-5": "Regional Statistics",
-    "G2-1": "Information Management",
+    "G2-1": "Information & Management",
     "G2-2": "Nature Aging",
     "G2-3": "Engineering",
     "G2-4": "Animal Nutrition",

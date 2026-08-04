@@ -67,10 +67,10 @@ confusion matrix are therefore calculated for these 10 represented categories;
 the test set was not artificially supplemented with instances from the four
 unrepresented model-output categories.
 
-The machine-readable files retain the original annotation strings (for
-example, `Related work` and `Historical background`). Title capitalization in
-the manuscript and Supplementary Material is a display convention and does not
-define a separate category.
+The machine-readable analysis files retain the original annotation strings.
+Report-facing tables and figure source files apply the manuscript's display
+convention: `Simple Mention`, `Historical Background`, `Related Work`, and
+`Shallow Citation`. Capitalization does not define a separate category.
 
 To create a deterministic training/validation split:
 
